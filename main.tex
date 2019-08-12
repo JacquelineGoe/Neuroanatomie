@@ -1,0 +1,518 @@
+\documentclass[12pt,a4paper,pdftex]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[round, authoryear]{natbib}
+\usepackage{graphicx}
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper,lmargin={2.5cm}, rmargin={2.5cm}, tmargin={2cm}, bmargin={2.5cm}}
+
+% Figure and Caption layout
+\usepackage[bf]{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\usepackage{color,soul}
+
+\usepackage[breaklinks=true,bookmarks=true,bookmarksopen=true,colorlinks=true,citecolor=gray,linkcolor=black,urlcolor=gray,pdfpagemode=UseNone,pdfstartview=FitH]{hyperref}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+% for commenting a whole section
+\usepackage{verbatim}
+
+\usepackage{pgfgantt}
+\usepackage{afterpage}
+
+% Index
+\usepackage{imakeidx}
+\makeindex[intoc, columnseprule]
+\newcommand{\indextitle}{\section{Index}}
+
+% Bilder
+\usepackage{epstopdf}
+\epstopdfDeclareGraphicsRule{.pdf}{png}{.png}{convert #1 \OutputFile}
+\DeclareGraphicsExtensions{.png,.pdf}
+
+% Bildernummerierung fuer jedes kapitel
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+
+\newcommand{\command}[1]{\texttt{#1}}
+\newcommand{\fileextension}[1]{\texttt{#1}}
+
+\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$} }
+
+% kapitel title auf deutsch
+\renewcommand{\bibsection}{\section{Literaturverzeichnis}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titelseite
+
+\begin{titlepage}
+ \begin{center}
+        \vspace*{1cm}
+        \LARGE
+        \textbf{Kurzes Lehrbuch der Neuroanatomie des Säugers}
+        \vspace{2cm}
+        
+        \Large
+        Praktikumsprotokoll des Mastermoduls Neuroanatomie
+        \vspace{4cm}
+        
+        \large
+        vorgelegt von \\ Jacqueline Göbl, Julia Grüb, Marta Provenzano und Laura Seidler % Author name
+        \vfill
+        \large     
+        T\"ubingen, \today
+    \end{center}
+    \newpage
+        \thispagestyle{empty}
+        \mbox{}
+        \newpage
+\end{titlepage}
+
+
+\thispagestyle{empty}
+\mbox{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Inhaltsverzeichnis und Abbildungsverzeichnis
+
+\tableofcontents
+\newpage
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Textbeginn
+
+\newpage
+\section{Einleitung}
+\begin{itemize}
+    \item Kurze Geschichte der Anatomie
+\end{itemize}
+\newpage
+\section{Material und Methoden}
+
+Computerprogramm am Aufnahmecomputer der Bilder:
+Axio Vision (AxioVs40 4.8.2.0, Copyright 2006-2010, Carl zeiss MicroImaging GmBH)
+
+
+
+\begin{itemize}
+    \item Schafhirn - die Präperationsanleitungen hat auch Jacqui
+    \item Perfusion der Ratte - hat auch Jacqui
+    \item Färbungen (Nissl, Faser, Immunohistochemie)
+    \item Auswertung am Mikroskop - Jacqui hat die genauen Angaben des Programms welches wir für die Mikroskopaufnahmen benutbenutzt wurde
+\end{itemize}
+
+\newpage
+\section{Allgemeine Übersicht}
+\subsection{Äußere Morphologie und Hirnteile}
+
+\begin{itemize}
+    \item Lage
+    \item charakteristische Form
+    \item Bezug zum Ventrikelsystem
+    \item Differenzierung zwischen Kerngebieten und cortikalen Strukturen
+    \item Charakterisierung der Großhirnrinde (Cortex) - Neocortex, Allocortex, Areale, Schichtung, typische Verbindungsmuster
+\end{itemize}
+\subsection{Spezifische Lage der Hirnnervenkerne im Hirnstamm}
+\begin{itemize}
+    \item relative Lage in Bezug zu sensorischen und motorischen Funktionen; Bezug zur dorsoventralen Organisation des Rückenmarks  
+    (motorische Kerne liegen systematisch  wo anders als somatosensorische Kerne ---wegen der Auflösung der dorsoventralen Struktur zu einer medialen lateralen Struktur) 
+    \item sensorisch: N.trigeminus, N.cochlearis, N.vestibularis, NTS
+    \item motorisch: Mo5, Mo7, N. ocolomotorius
+\end{itemize}
+
+% Allgemeine sensorische Bahnen
+\newpage
+\section{Allgemeine sensorische Bahnen}
+Dieses Kapitel behandelt die allgemeine Sensorik \index{Sensorik !allgemein} die im Gegensatz zu speziellen Sensorik (Kapitel~ \ref{sec:spezsens}) steht. In der allgemeine Sensorik sind die Sinne zusammen gefasst welche über den ganzen Körper verteilt sind, dazu gehören unter anderem die Somatosensorik \index{Sensorik !Somato-} die Propriozeption \index{Propriozeption} und die Viszerosensorik \index{Sensorik !Viszero-}\cite[Kap. 22]{kandel2013principles}. Die spezielle Sensorik \index{Sensorik !speziell} fasst die Sinne zusammen welche auf Grund der Cephalisation bei Säugern nach vorne in den Kopf verlagert sind.
+\\
+Die Somatosensorik zeichnet sich durch die Repräsentation der direkten äußeren Welt und der inneren Welt aus. Bei der Repräsentation der Außenwelt unterscheidet man bei Säugetieren zwischen zwei Rezeptorsystemen. Zum einen die haarlose Haut in den Handinnenflächen, an der Fußunterseite und an den Lippen und der Nase, zum anderen die behaarte Haut mit hoch spezialisierten Tastsinneszellen innerviert durch die Bewegungen des Follikels auf den Blutsinus \index{Blutsinus} der Vibrissen.  \index{Sinushaar} \cite{paxinos2014rat}
+Die Propriozeption codiert die Informationen der relative Position unserer Extremitäten und anderer Körperteile im Raum und bildet in den Vorderextremitäten die Grundlage für abstrakte Wahrnehmung von Objektgrößen und Gewicht. Ein weiteren Bereich in der Somatosensorik bildet der Sinn welcher Schmerzen und Temperatur verarbeitet. \cite{paxinos2014rat}
+Im Weiteren wird am Beispiel der Ratte näher auf die unterschiedlichen Systeme eingegangen und wodurch diese sich genau unterscheiden. 
+%%%%% comment
+\begin{comment}
+\begin{itemize}
+    \item kurze einführung was Somatosensorik ist und welche Typen unterscheiden werden
+    \item kurze reichweite
+    \item innere und äußere welt
+    \item glabrous skin nur an Hand und Fußinnenflächen und Lippen und Nase \cite{paxinos2014rat} p.675
+    \item behaarte Haut \\ However, in rats the most highly
+    specialized touch receptors are those that innervate the
+    elaborate follicles of the large whiskers on the face (a.k.a.the mystacial vibrissae or sinus hairs) \cite{paxinos2014rat}
+    \item Proprioception \\ The study of somatic
+    sensation includes both cutaneous mechanisms, and
+    another less obvious sense that informs us about where
+    our limbs are in space relative to the environment and
+    the other parts of our body (proprioception). Proprio-
+    ception in the forelimb also forms the basis for abstrac-
+    tions such as object size and weight. \cite{paxinos2014rat}
+    \item schmerz und temperatur sinn
+\end{itemize}
+\end{comment}
+%%%%%%
+
+% Somatosensorik
+\subsection{Somatosensorik \index{Somatosensorik} des Körpers}
+Die Somatosensorik des Körpers wird in zwei Systeme unterteilt, wobei der Tastsinn \index{Tastsinn} und die Propriozeption das lemniskale System \index{System !lemniskal} bilden und der Schmerz- und Temperatursinn  das anterolaterales System. \index{System !anterolateral} Beide Systeme werden durch die Rezeptoren unter der haarlosen Haut der Säuger innerviert.
+
+\subsubsection{Tastsinn und Propriozeption (lemniskales System)}
+Die Rezeptoren des lemniskalen Systems werden unterteilt, in ihre Lage unter der Haut und ihre Adaptationseigenschaften. Dadurch unterscheiden sie sich in der Modalität, die sie codieren. Bei der Lage wird unterschieden zwischen direkt unter der Oberfläche oder tiefer im Gewebe liegenden Nervenendigungen und schnell bzw. phasisch und langsam bzw. phasisch-tonisch Adaptation dieser Nerven.\\
+Direkt unter der Hautoberfläche liegen die Meissner- und die Merkel-Rezeptoren welche für Bewegung und Druck sowie in abstrakterem Sinne für Form, Textur und das Greifen nach Objekten codieren. \cite[Kap. 24]{paxinos2014rat} Tiefer unter der Haut liegen die Pacini-Rezeptoren welche schnell adaptierende Rezeptoren sind, die für Vibrationen codieren. Zusammen mit den Meissner- und Merkelrezeptoren bilden sie den bewussten Tastsinn. Die Neurone der Rezeptoren sind dicke, myelinisierte A$\alpha$ Nervenfasern mit einer Leitgeschwindigkeit von 72-120 m/s \cite[Kap.22]{kandel2013principles}. Unbewusst werden von den langsamen, tief unter der Haut liegenden Ruffini-Rezeptoren Informationen über die Dehnung der Haut und der Muskeln, damit der Position der Gelenke und Extremitäten weiter gegeben.
+Die Nervenfasern der Propriozeption sind dicke, myelinisierte A$\beta$ Nerven deren Durchmesser etwas geringer ist als, der der A$\alpha$ Neuronen.
+Die Nervenfasern eines Hautgebiets werden zu einem peripheren Nervenstrang gebündelt und ziehen in das dorsale Wurzelganglion. Die Zellkörper der Nerven fasern bilden das dorsale Wurzelganglion und Versorgen die Nervenfasern mit den nötigen Nährstoffen. 
+\\.\\. \textcolor{red}{\textbf{Aufgabe des dorsalen Wurzelganglions}}
+\\.\\.\\
+Die Axone der Nerven ziehen weiter in die Wirbelsäule und terminieren in der grauen Substanz des Rückenmarks. Im Allgemeinen enden die A$\alpha$ Neurone im und nahe des Vorderhorns und die A$\beta$ Neurone der Propriorezeption im intermedialen Schichten des Hinterhorns des Rückenmarks.
+
+\begin{itemize}
+    \item Tastsinn und Proprioception (lemniskales System)
+    \begin{itemize}
+    \begin{comment}
+        \item \cite{kandel2013principles} page 447
+        \item The cell body of a dorsal root ganglion neuron lies in a ganglion on the dorsal root of a spinal or cranial nerve. Dorsal root ganglion neurons originate from the neural crest and are intimately associated with the nearby segment of the spinal cord. \cite{kandel2013principles}
+        \item The nerve fibers that convey the various somatosensory submodalities from each dermatome are bundled together in the peripheral nerves as they enter the dorsal root ganglia. However, as the fibers exit the ganglia and approach the spinal cord, the large- and small-diameter fibers separate into medial and lateral divisions.
+        \item The medial division includes large, myelinated
+        A$\alpha$ and A$\beta$ fibers that transmit proprioceptive and
+        cutaneous information from a dermatome. The lat-
+        eral division includes small thinly myelinated A$\delta$ and
+        unmyelinated C fibers that transmit noxious, thermal,
+        and visceral information from the same dermatome. \cite{kandel2013principles}
+        \item As a general
+        rule the largest fibers (A$\alpha$) terminate in or near the
+        ventral horn, the medium-size fibers (A$\beta$) from the
+        skin and muscle terminate in intermediate layers of the dorsal horn, and the smallest fibers (A$\delta$ and C)
+        terminate in the most dorsal portion of the spinal
+        gray matter.
+        \end{comment}
+        \item dorsal column on each side contains the central
+        branches of A$\alpha$ and A$\beta$ afferents as they ascend to the
+        medulla and thus form the major ascending pathway
+        for tactile and proprioceptive information to the brain
+        stem nuclei from which somatosensory information
+        is conveyed to the cerebral cortex.
+        \item The division between gracile and cuneate fas-
+        cicles is important only because they terminate in ana-
+        tomically distinct nuclei in the caudal brain stem, the
+        gracile and cuneate nuclei (Figure 22–11). Together
+        with the external cuneate nucleus and other minor
+        nuclei, they form the dorsal column nuclei. \\ 
+        \item Axons of neurons in the dorsal column nuclei form the medial lemniscus, which crosses the midline in the medulla and is joined medially by the homologous projection from the trigeminal nuclei. \cite{kandel2013principles} p.492
+        \item Cutaneous information from the dorsal column
+        and trigeminal nuclei enters the lateral and medial
+        ventral posterior nuclei of the thalamus, which form
+        a single functional entity. Proprioceptive information
+        enters the superior ventral posterior nucleus, which
+        lies just above the other two \cite{kandel2013principles} p.493-494
+    \end{itemize}
+    
+    \item Schmerz und Temperatursinn (anterolaterales System)
+    //
+    Der Schmerz- und Temperatursinn hat vor allem eine schützende Funktion auf unseren Körper. Er warnt uns vor Verletzungen oder zu großer Hitze, welches dann zum ausweichen vor der Situation oder behandeln der Verletzung führt. Der Schmerz \textcolor{red}{entspringt} von den somatosensorischen Strukturen in der Haut und wird von dort zu den höheren Gehirnarealen weitergeleitet. 
+    \begin{itemize}
+        \item protective function, alerting us to injuries that require evasion or treatment. \cite{kandel2013principles}
+        \item Pain arising from
+        somatic structures is transmitted to higher brain cen-
+        ters through the spinothalamic tract pathways in the
+        ventral and lateral funiculi of the spinal cord. \cite{paxinos2014rat}
+        \item most of these nociceptors
+        are simply the free nerve endings of primary sensory
+        neurons. There are three main classes of nociceptors—
+        thermal, mechanical, and polymodal \cite{kandel2013principles} p.531
+        \item whose cell bodies are located in dorsal root
+        ganglia or the trigeminal ganglia. The central branches
+        of these neurons terminate in the spinal cord in a highly
+        orderly manner. Most terminate in the dorsal horn. \cite{kandel2013principles}
+        \item The spinothalamic tract origi-
+        nates primarily from dorsal horn cells concentrated in
+        laminae I, IV, V, VII, and X, i.e., in the marginal zone \cite{paxinos2014rat}
+        \item The spi-
+        nothalamic cells send their axons across the midline, and
+        ascend as the spinothalamic tract in the contralateral white matter to the lateral thalamus. The largest group of spinothalamic neurons in rats is in the upper cervical spinal cord. This cell group projects bilaterally to the thalamus. \cite{paxinos2014rat}
+        \item The axons of spinothalamic cells ascending to the lateral thalamus are somatotopically organized. \cite{paxinos2014rat} p.710
+        \item The targets of the axons of spinothalamic cells in the lateral thalamus include the ventral posterolateral (VPL) nucleus and the posterior thalamic nuclear group (Po). Other spinothalamic tract cells target the medial thalamus, including the central lateral nucleus and the nucleus submedius \cite{paxinos2014rat}
+        \item The thalamus contains several relay nuclei that participate in the central processing of nociceptive information. Two of the most important regions of the thalamus are the lateral and medial nuclear groups. \cite{kandel2013principles} p.544
+        \item zwei andere Wege aus dem peripheren Schmerz und Temperatur Sinn: Spinomesencephalischer Tract und der Spinoreticuläre Tract
+        \item It is well known that the spinoreticu-
+        lar pathway contributes to descending analgesia and
+        autonomic regulation. The spinomesencephalic tract is also involved in noci-ception. However, it is not clear that this tract contributes
+        to the sensory-discriminative aspects of pain. Instead, it
+        is better suited to contribute to the motivational-affective
+        aspects of pain, as well as to trigger activity in descend-
+        ing control systems. \cite{paxinos2014rat}
+        \item Responses to noxious stimuli have been recorded
+        in the primary somatosensory cortex (SmI) of rats
+        \cite{paxinos2014rat}
+        \item The receptive fields of nociceptive corti-
+        cal neurons are larger than those of mechanoreceptive
+        neurons, and there are often inhibitory receptive fields.
+        Nociceptive neurons are generally located in layers V and VI, whereas mechanoreceptive neurons are mainly
+        in layers II–V. \cite{paxinos2014rat}
+        \item The cingulate gyrus and insular cortex con-
+        tain neurons that are activated strongly and selectively
+        by nociceptive somatosensory stimuli (Box 24–1). The
+        cingulate gyrus forms part of the limbic system and is
+        thought to be involved in processing emotional states
+        associated with pain. The insular cortex receives direct
+        projections from the thalamus, specifically the medial nuclei and the ventroposterior medial nucleus. Neurons
+        in the insular cortex process information about the
+        internal state of the body and contribute to the autonomic component of pain responses. \cite{kandel2013principles} p.545
+        
+    \end{itemize}
+\end{itemize}
+
+\subsection{Somatosensorik des Kopfes}
+\begin{itemize}
+    \item Tast, Schmerz und Temperatur am Kopf (trigeminales System)
+    \item Primary
+afferents for touch on the face and mouth (including the
+mystacial vibrissae) travel in the trigeminal nerve (the 5th cranial nerve) to enter the brainstem at the level of
+the pons, where they branch and terminate in the prin-
+cipal trigeminal nucleus and several subdivisions of the
+spinal trigeminal nuclear complex \cite{paxinos2014rat}
+\item The axon branches terminating in the principal trigemi-
+nal nucleus for touch are analogous to the dorsal column
+pathway that terminates in the gracile and cuneate nuclei
+for the body \cite{paxinos2014rat}
+\item
+\end{itemize}
+\subsection{(Viscerosensorik)}
+
+\newpage
+\section{Spezielle sensorische Bahnen}
+% verweis auf dieses Kapitel mit \ref{sec:spezsens}
+\label{sec:spezsens}
+Die speziellen sensorischen Bahnen umfassen unter anderem die Hörbahn, die Sehbahn und die Riechbahn, womit sich in diesem Kapitel vor allem beschäftigen wird. Diese drei speziellen sensorischen Bahnen spielen sowohl bei der Ratte als auch beim Schaf die zentrale Rolle. Es gibt weiter spezialisierte Sinne wie zum Beispiel den elektrischen Sinn bei Fischen, die beiden chemischen Sinne für Geruch und Geschmack und der Magnetsinn bei Zugvögeln \cite{smith2008biology}. Diese werden nicht in dieser Zusammenfassung behandelt, spielen aber bei anderen Tierarten eine tragende Rolle und sollten aus diesem Grund hier kurz erwähnt werden.
+
+\subsection{Hörbahn}
+
+\begin{itemize}
+    \item Funktion of the ear
+    \begin{itemize}
+        \item each of our ears must capture this energy , transmit it ot the receptor organ and trancduce it into electrical signals suitable for neural analysis. \cite{kandel2013principles}
+        \item von einem mechanischen stimulus zu einem chemischen und dann zu einem elektrischen signal
+        \item von den inneren Haarzellen zu den Spiralganglia die deswegen so heißen weil sie der spiralstruckture der cochlea folgen \cite{kandel2013principles}
+        \item affrent und efferenter weg in und aus der cochlear wie viel prozent 
+        \item vllt ganz kurz anschneiden was für einen rolle die äußeren haarzellen spielen
+        
+    \end{itemize}
+    \item Nucleus cochleraris: lateral an der Medulla, ipsilaterale Repräsentation
+    \begin{itemize}
+        \item terminierung der inneren haarzellen in cochlear nucleus 
+        \item tonotopie 
+        \item ipsilaterale monoaurale verschaltung
+        \item function des cochlaear nucleus
+        \item weiter verschaltung: großteil in die obere olive, ein kleiner teil direkt in den lateralen leminiscus und dessen nuclei 
+    \end{itemize}
+    \item obere Olive
+    \begin{itemize}
+        \item gesamte nuclei der oberen olive für auditorische verarbeitung (welches sind die anderen kerne??)
+        \item function: binaurale verschaltung integration von beiden ohren führt zu richtungs hören
+        \item laterale obere olive und mntb für Interaurale intensitäts diffrenz
+        \item mediale obere olive für interaurale zeit diffrenz ( tielfe töne) warum bei ratten nochmal kleiner???
+        \item wo gehen die zellen dann genau hin
+    \end{itemize}
+    \item lateraler Lemniscus
+    \begin{itemize}
+        \item nerven aus der oberen olive ziehen durch den nervenstrang der lateraler leminiscus heißt in den inferior colliculus aber manche sind nochmal zwischen geschaltet in den kernen des lateralen leminiscus ( gibts da ihrgend eine regel oder aufteilung welche verschaltet sind und welche nicht??)
+        \item was ist dann der grund für die verschaltung und welche funktion hat der laterale leminiscus ????
+    \end{itemize}
+    \item Colliculus Inferior
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    \item Medial geniculate nucleus
+\end{itemize}
+
+\subsection{Sehbahn}
+\begin{itemize}
+    \item eye
+    \begin{itemize}
+        \item kurzer überblick über die entwicklung des auges in der embryonal entwicklung retina aus dem diencephalon
+        \item auf grund der evolutionären Entwicklunf ein "inverted" auge wesswegen die retina und die photorezeptoren nach innen weg vom licht gerichtet sind
+        \item formung der retina: \cite{smith2008biology} p.287
+        \item retinale zellen Stäbchen und zäpfchen und dann bipolar zellen und Ganglienzellen 
+        \item vllt was zu den rezeptifen feldern
+    \end{itemize}
+    \item visual pathway
+    \begin{itemize}
+        \item 3 verschiedene wege ( vorlesung von oswald IN)
+        \item wie heißen die von führen sie hin und wir konzentrieren uns auf einen zentralen und warum
+    \end{itemize}
+    \item optic nerve von der etina zum Chiasma opticum
+    \item Optic chiasm    \index{Optic chiasm}
+    \begin{itemize}
+        \item Semidecussation  \index{Decussation!Semi-}
+        \item ganglienzellen von der nasalen/medialen seite des auges kreuzen am optic chiasm auf die andere seite des gehirns wärend die laterale seite des auges auf der selben seite weiter projezieren
+        ßitem keine verschaltung im optischen chiasma sondern nur eine kreuzung der ganglien zellen
+        \item danach optic tract
+    \end{itemize}
+    \item Optic tract \index{Optic tract}
+    \item LGN: nicht gestreift, hinterer Teil das Thalamus \index{Thalamus}, auf Höhe des superior colliculus \index{SC!Superior culliculus}
+    \begin{itemize}
+        \item lateral am Diencephalon \index{Diencephalon} vorbei
+        \item posteriorer part des thalamus
+        \item aufbau des LGN unterschied zwischen primaten (6Schichten) und Ratten bzw. Schafen
+        \item kurz was zur funktion der verschaltung auf der ebene ( vllt etwas zu den rezeptive fields aber dann auch schon auf der ebene der retina erwähnen)
+        \item von LGN über die optic radiation (welche nicht in den schnitten sichtbar ist) ruaf in den neocortex und in V1 
+    \end{itemize}
+    \item Magnifikationsfaktor = Dichte der Zellen und wie sie verschaltet sind
+    \\
+\end{itemize}
+\subsection{(Riechbahn)}
+\begin{itemize}
+    \item vom olfactorischen bulb über den olfactorischen trakt zu einerm der ältesten teile des neocortex zum Pyriformen lappen
+    \item weitere neuronen führen dann zum thalamus un die weitern stränge dann in den orbitofrontal lobe \cite{smith2008biology} 
+    \item eventuell Dopaminerge Bilder
+\end{itemize}
+
+\newpage
+\section{Motorische Kerngebiete und Bahnen}
+\subsection{Motorische Kerngebiete}
+\subsection{Motorische Bahnen zum Hirnstamm}
+\subsection{Motorische Bahnen zum Rückenmark}
+\begin{itemize}
+    \item laterales System: corticospinaler Trakt
+    \item laterales System: rubrospinaler Trakt
+    \item mediales System: reticulospinaler Trakt (medial,lateral)
+    \item mediales System: vestibulospinaler Trakt
+\end{itemize}
+\subsection{Kleinhirn}
+\begin{itemize}
+    \item Vestibulocerebellum, Spinocerebellum, Corticocerebellum 
+    \item Schichtung
+    \item funktionelle Einheiten
+    \item Schaltkreise
+\end{itemize}
+\subsection{(Motorik der Kopfmuskulatur)}
+\subsection{(Motorik der Augen)}
+
+\newpage
+\section{Integrative Systeme}
+\subsection{Limbisches System und Hippocampus}
+\subsection{Basalganglien}
+
+\newpage
+\section{generelle Transmittersysteme (monoaminerge Systeme)}
+\section{Quantitative Analyse generelle Transmittersysteme (am Beispiel der catecholaminergen Systeme)}
+\subsection{Immunohistochemischer Nachweis catecholaminerger Neurone}
+Der immunhistochemische Nachweis catecholaminerger Neurone lässt sich in sechs Einzelschritte unterteilen, diese sind in Material und Methoden auf S.xy zu finden.\newline
+1. Quenching\newline
+Um eine nicht-spezifische Hintergrundsfärbung durch endogene Peroxidasen zu vermeiden, wird im ersten Schritt durch die Zugabe von Wasserstoffperoxidase eine Reaktion unterbunden. \newline
+2. Blocken\newline
+Vor der Zugabe des ersten Antikörpers müssen zwei Schritte erfolgen: Zum einen sollen die Antikörper ausschließlich an die spezifischen Bindestellen binden, zum anderen muss den Antikörpern der Zugang zu intrazellulären Antigenen ermöglicht werden.
+Um nicht-spezifische Protein-Protein-Interaktion zwischen Antikörpern und Proteinen im zu untersuchenden Gewebe zu unterbinden, werden blockende Poteine hinzuegegeben, die kompetetitv and die unspzifische Bindestelle binden. Hierbei binden Fc-Rezeptoren, welche auf Makrophagen und vielen anderen immunologischen Zellen des Gewebe zu finden sind and das Fc-Ende des Antikörpers und führen somit zur unspezifischen Bindung. 
+Um die Antigene des zu untersuchenden Gewebes zugänglich zu machen, muss die Zellmembran vorerst mit Detergenzien bahendelt werden, die die Doppellipidschicht durch Verseifung auflockern - die Permabilisierung.\newline
+3. Primärer Antikörper\newline
+Der primäre Antikörper besitzt eine Fc-Region, die artspezifisch an unsere Host Bindestelle binder und eine Fab-Region, die an das Epitop des Antigens (Tyrosin-Hydroxylase) bindet.\newline
+4. Sekundärer Antikörper\newline
+Nun bindet die Fc-Region des ersten Antikörpers and die Fab-Region des zweiten Antikörpers. Der zweite Antikörper ist biotyniliert. \newline
+5. Der ABC-Complex\newline
+Nachdem das Avidin die biotylinielierte Meerrettich-Peroxidase gebunden hat, kann es nun auch an das biotynilierte Ende des sekundären Antikörpers binden. Dieser Schritt dient der Amplifizerung des Signals.\newline
+6. DAB Reaktion\newline
+Wasserstoffperoxid bindet and die Meerrettich-Peroxidase und oxidiert das DAB, welches reduziert und nun als bräunliches Edukt vorliegt und somit indirekt die erfolgreiche Bindung and das Antigen sichtbar macht.\newline
+
+\subsection{Lage und Größe der Kerngebiete und Projectionsareale}
+\subsection{Dopaminerges und Noradrenegres System}
+\begin{itemize}
+    \item Incertohypothalamic/nigrostriatal System (Dopamin)
+    \item Tuberohypophysial System (Dopamin)
+    \item Locus coeruleus (Noradrenalin)
+\end{itemize}
+\subsection{Größenvergleich der Neurone in \textit{substantia nigra} und \textit{locus coeruleus}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%
+% Bibliography
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Index
+\printindex
+
+2n - II optic nerve
+3V - 3. Ventrikel\\
+3n - III oculomotor nerve\\
+4V - 4. Ventrikel\\
+5n - V Trigeminus\\
+6n - VI nervus abducens\\
+\\
+Aq - Aquaeductus cerebri\\
+Amy - Amygdala\\
+ACx - Archicortex\\
+\\
+CCx - cingulärer Cortex\\
+Cu - Nucleus caudatus\\
+CPu - Caudoputamen (Striatum)\\
+cc - corpus callosum / Balken\\
+ChP - choroid plexus\\
+Cx - cerebraler Cortex\\
+cp - cerebellar peduncle\\
+CS - cortical Spine / cortikales Rückenmark\\
+Cb - Cerebellum\\
+\\
+Epi - Epiphyse\\
+EO - epithelium olfactorium\\
+\\
+f - Fornix\\
+fi - Fimbria\\
+\\
+Hi - Hippocampus\\
+Hyp - Hypophyse\\
+\\
+IC - Inferior colliculus\\
+ICj - Islands of Calleja\\
+\\
+LGN - lat. genuculate nuc.\\
+lot - lat. olfactory tract\\
+LV - lateraler Ventrikel
+\\
+Med - Medulla\\
+MB - mammillary body\\
+\\
+NCx - Neocortex\\
+\\
+OB - olfactory bulb / Riechkolben\\
+ox - chiasma opticum\\
+ot - olfactory tract / olfaktorischer Trakt\\
+\\
+Pon - Pons\\
+PM - Pia mater\\
+\\
+RF - rhinal fissure\\
+\\
+SC - Superior colliculus / Colliculus inferior\\
+\\
+Th - Thalamus\\
+Teg - Tegmentum\\
+tz - trapezoid body / Trapezkörper\\
+TC - Truncus cerebri / Hirnstamm\\
+Tu - olfactory tubercle\\
+\\
+Ve - Velum\\
+\\
+
+
+
+\end{document}
+
+
