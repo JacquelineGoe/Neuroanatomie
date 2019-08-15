@@ -1,9 +1,10 @@
 \documentclass[12pt,a4paper,pdftex]{article}
+
+% Sprache
 \usepackage[ngerman]{babel}
+
 \usepackage[utf8]{inputenc}
 
-
-\usepackage[round, authoryear]{natbib}
 \usepackage{graphicx}
 
 % Page layout
@@ -15,9 +16,14 @@
 \usepackage{subcaption}
 \usepackage{wrapfig}
 
+% Befehle zur Textauszeichnung (hervorheben, unterstreichen ect.)
 \usepackage{color,soul}
 
+% Zitier-Style für Bücher und URL
+\usepackage[round, authoryear]{natbib}
 \usepackage[breaklinks=true,bookmarks=true,bookmarksopen=true,colorlinks=true,citecolor=gray,linkcolor=black,urlcolor=gray,pdfpagemode=UseNone,pdfstartview=FitH]{hyperref}
+
+
 \usepackage{float}
 \usepackage{gensymb}
 \usepackage{siunitx}
@@ -35,7 +41,7 @@
 \makeindex[intoc, columnseprule]
 \newcommand{\indextitle}{\section{Index}}
 
-% Bilder
+% Bilder importieren
 \usepackage{epstopdf}
 \epstopdfDeclareGraphicsRule{.pdf}{png}{.png}{convert #1 \OutputFile}
 \DeclareGraphicsExtensions{.png,.pdf}
@@ -44,10 +50,11 @@
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
 
+% ich hab keine ahnung was die tun und wir brauchen sie auch nicht
+%\newcommand{\command}[1]{\texttt{#1}}
+%\newcommand{\fileextension}[1]{\texttt{#1}}
 
-\newcommand{\command}[1]{\texttt{#1}}
-\newcommand{\fileextension}[1]{\texttt{#1}}
-
+% plus minus zeichen
 \newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$} }
 
 % kapitel title auf deutsch
@@ -152,6 +159,7 @@ Dieses Kapitel behandelt die allgemeine Sensorik \index{Sensorik !allgemein} die
 Die Somatosensorik zeichnet sich durch die Repräsentation der direkten äußeren Welt und der inneren Welt aus. Bei der Repräsentation der Außenwelt unterscheidet man bei Säugetieren zwischen zwei Rezeptorsystemen. Zum einen die haarlose Haut in den Handinnenflächen, an der Fußunterseite und an den Lippen und der Nase, zum anderen die behaarte Haut mit hoch spezialisierten Tastsinneszellen innerviert durch die Bewegungen des Follikels auf den Blutsinus \index{Blutsinus} der Vibrissen.  \index{Sinushaar} \cite{paxinos2014rat}
 Die Propriozeption codiert die Informationen der relative Position unserer Extremitäten und anderer Körperteile im Raum und bildet in den Vorderextremitäten die Grundlage für abstrakte Wahrnehmung von Objektgrößen und Gewicht. Ein weiteren Bereich in der Somatosensorik bildet der Sinn welcher Schmerzen und Temperatur verarbeitet. \cite{paxinos2014rat}
 Im Weiteren wird am Beispiel der Ratte näher auf die unterschiedlichen Systeme eingegangen und wodurch diese sich genau unterscheiden. 
+
 %%%%% comment
 \begin{comment}
 \begin{itemize}
@@ -179,122 +187,122 @@ Im Weiteren wird am Beispiel der Ratte näher auf die unterschiedlichen Systeme 
 Die Somatosensorik des Körpers wird in zwei Systeme unterteilt, wobei der Tastsinn \index{Tastsinn} und die Propriozeption das lemniskale System \index{System !lemniskal} bilden und der Schmerz- und Temperatursinn  das anterolaterales System. \index{System !anterolateral} Beide Systeme werden durch die Rezeptoren unter der haarlosen Haut der Säuger innerviert.
 
 \subsubsection{Tastsinn und Propriozeption (lemniskales System)}
+
+\subsubsection*{Rezeptoren}
 Die Rezeptoren des lemniskalen Systems werden unterteilt, in ihre Lage unter der Haut und ihre Adaptationseigenschaften. Dadurch unterscheiden sie sich in der Modalität, die sie codieren. Bei der Lage wird unterschieden zwischen direkt unter der Oberfläche oder tiefer im Gewebe liegenden Nervenendigungen und schnell bzw. phasisch und langsam bzw. phasisch-tonisch Adaptation dieser Nerven.\\
 Direkt unter der Hautoberfläche liegen die Meissner- und die Merkel-Rezeptoren welche für Bewegung und Druck sowie in abstrakterem Sinne für Form, Textur und das Greifen nach Objekten codieren. \cite[Kap.~24]{paxinos2014rat} Tiefer unter der Haut liegen die Pacini-Rezeptoren welche schnell adaptierende Rezeptoren sind, die für Vibrationen codieren. Zusammen mit den Meissner- und Merkelrezeptoren bilden sie den bewussten Tastsinn. Die Neurone der Rezeptoren sind dicke, myelinisierte A$\alpha$ Nervenfasern mit einer Leitgeschwindigkeit von 72-120 m/s \cite[Kap.~22]{kandel2013principles}. Unbewusst werden von den langsamen, tief unter der Haut liegenden Ruffini-Rezeptoren Informationen über die Dehnung der Haut und der Muskeln, damit der Position der Gelenke und Extremitäten weiter gegeben.
 Die Nervenfasern der Propriozeption sind dicke, myelinisierte A$\beta$ Nerven deren Durchmesser etwas geringer ist als, der der A$\alpha$ Neuronen.
-Die Nervenfasern eines Hautgebiets werden zu einem peripheren Nervenstrang gebündelt und ziehen in das dorsale Wurzelganglion. Die Zellkörper der Nervenfasern bilden das dorsale Wurzelganglion und Versorgen die Nervenfasern mit den nötigen Nährstoffen. 
-\\.\\. \textcolor{red}{\textbf{Aufgabe des dorsalen Wurzelganglions}}
-\\.\\.\\
-Die Axone der Nerven ziehen weiter in die Wirbelsäule und terminieren in der grauen Substanz des Rückenmarks. Im Allgemeinen enden die A$\alpha$ Neurone im und nahe des Vorderhorns und die A$\beta$ Neurone der Propriorezeption im intermedialen Schichten des Hinterhorns des Rückenmarks.
+Die Nervenfasern eines Hautgebiets werden zu einem peripheren Nervenstrang gebündelt und ziehen in das Spinalganglion innerhalb des Wirbelkanals. Die Zellkörper der Nervenfasern liegen in diesem Spinalganglion und sind umgeben von speziellen Gliazellen. Zwischen den Nervenzellen verlaufen fenstrierte Kapillaren und versorgen die Nervenfasern mit den nötigen Nährstoffen. 
+
+\subsubsection*{Rückenmark}
+Die Axone der Nerven ziehen weiter in die Wirbelsäule. Da hier keine synaptische Verschaltung statt findet, ziehen die Axone direkt in die weiße Substanz des Rückenmarks und steigen parallel zum Verlauf der Wirbelsäule auf. Die Axone unterhalb des sechsten thorakalen Segments (T6) bilden den \textit{Fasciculus gracilis} \index{Fasciculus !gracilis} und die Axone oberhalb des sechsten Thorakalsegments (T6) formen den \textit{Fasciculus cuneatus} \index{Fasciculus !cueatus} im dorsalen Teil der weißen Substanz des Rückenmarks (Abb.~\ref{fig:bahnen_rueckenmark}) \cite[Kap.~8]{paxinos2014rat}. \textit{F.~gracilis} und \textit{F.~cuneatus} bilden somit die wichtigste aufsteigende Bahn für die sensorischen Informationen aus dem Tastsinn und der Eigenwahrnehmung hinauf in den Hirnstamm. 
+Die Trennung zwischen \textit{F.~gracilis} und \textit{F.~cuneatus} ist wichtig, da die sie in zwei anatomisch unterschiedlichen Kernen des Hirnstamms terminieren. Sie bilden zusammen mit anderen kleineren Bahnen den Hinterstrang \cite[Kap.~22]{kandel2013principles}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth] {pictures/somatosensory/aufabsteigendeBahnen_Rueckenmark.png}
+    \caption[Auf- und Absteigende Bahnen im Rückenmark]{\textbf{Auf- und Absteigende Bahnen im Rückenmark}\\ Zur besseren Veranschaulichung der Bahnen sind die Bahnen in der Abbildung nach absteigenden Bahnen auf der linken Seite und absteigenden Bahnen auf der rechten Seite aufgeteilt. Beide Gruppen kommen jeweils gespiegelt auch auf der anderen Seite vor.}
+    \label{fig:bahnen_rueckenmark}
+\end{figure}
+
+\subsubsection{Medulla}
+
+Die Axone des \textit{Fasciculus~gracilis} terminieren im \textit{Nucleus~gracilis} in der Medulla. Auf gleicher Ebene der Medulla enden auch die Axone des \textit{Fasciculus~cuneatus} im \textit{Nucleus~cuneatus}. \textcolor{red}{Hier kann gut ein Bild der medulla eingefügt werden auf dem man die beiden Nuclei sieht und auf welcher ebene sie mit anderen markanten Strukturen der Medulla liegen. vllt gibt es ja auch noch ein bild auf dem gleichzeitig der mediale leminiscus zu sehen ist. Ich sollte auf jedenfall dann beschreiben wie wo sie zu finden sind welche strukturen auch noch dort liegen und anhand was man überhaupt weis dass das die medulla ist -- ventrikel!!!!!}
+
+
+Beide Nuclei sind zylindrisch geformt und in rostrocaudaler Richtung ausgedehnt. Die afferenten Neuronen aus einer Hautregion enden in der rostrocaudalen Ausdehnung auf einer Linie und verschiedene Hautregionen werden lateral-medial repräsentiert. Die somatosensorische Repräsentation auf dieser Ebene gleicht einem auf dem Rücken liegenden kopflosen Homunculus. Dabei liegen die distalen Körperregionen lateral und die proximalen Hautregionen medial in den Nuclei. Die taktilen und propriozeptiven Informationen des Kopfes werden in angrenzenden \textit{Nucleus principalis nervi trigemini} repräsentiert \cite[Kap.~22]{kandel2013principles}. 
 
 \begin{itemize}
-    \item Tastsinn und Proprioception (lemniskales System)
-    \begin{itemize}
-    \begin{comment}
-        \item \cite{kandel2013principles} page 447
-        \item The cell body of a dorsal root ganglion neuron lies in a ganglion on the dorsal root of a spinal or cranial nerve. Dorsal root ganglion neurons originate from the neural crest and are intimately associated with the nearby segment of the spinal cord. \cite{kandel2013principles}
-        \item The nerve fibers that convey the various somatosensory submodalities from each dermatome are bundled together in the peripheral nerves as they enter the dorsal root ganglia. However, as the fibers exit the ganglia and approach the spinal cord, the large- and small-diameter fibers separate into medial and lateral divisions.
-        \item The medial division includes large, myelinated
-        A$\alpha$ and A$\beta$ fibers that transmit proprioceptive and
-        cutaneous information from a dermatome. The lat-
-        eral division includes small thinly myelinated A$\delta$ and
-        unmyelinated C fibers that transmit noxious, thermal,
-        and visceral information from the same dermatome. \cite{kandel2013principles}
-        \item As a general
-        rule the largest fibers (A$\alpha$) terminate in or near the
-        ventral horn, the medium-size fibers (A$\beta$) from the
-        skin and muscle terminate in intermediate layers of the dorsal horn, and the smallest fibers (A$\delta$ and C)
-        terminate in the most dorsal portion of the spinal
-        gray matter.
-        \end{comment}
-        \item dorsal column on each side contains the central
-        branches of A$\alpha$ and A$\beta$ afferents as they ascend to the
-        medulla and thus form the major ascending pathway
-        for tactile and proprioceptive information to the brain
-        stem nuclei from which somatosensory information
-        is conveyed to the cerebral cortex.
-        \item The division between gracile and cuneate fas-
-        cicles is important only because they terminate in ana-
-        tomically distinct nuclei in the caudal brain stem, the
-        gracile and cuneate nuclei (Figure 22–11). Together
-        with the external cuneate nucleus and other minor
-        nuclei, they form the dorsal column nuclei. \\ 
-        \item Axons of neurons in the dorsal column nuclei form the medial lemniscus, which crosses the midline in the medulla and is joined medially by the homologous projection from the trigeminal nuclei. \cite{kandel2013principles} p.492
-        \item Cutaneous information from the dorsal column
-        and trigeminal nuclei enters the lateral and medial
-        ventral posterior nuclei of the thalamus, which form
-        a single functional entity. Proprioceptive information
-        enters the superior ventral posterior nucleus, which
-        lies just above the other two \cite{kandel2013principles} p.493-494
-    \end{itemize}
-    
-    \item Schmerz und Temperatursinn (anterolaterales System)
-    //
-    Der Schmerz- und Temperatursinn hat vor allem eine schützende Funktion auf unseren Körper. Er warnt uns vor Verletzungen oder zu großer Hitze, worauf wir dann reflexartig reagieren und zurückweichen oder die Verletzung behandeln. Der Schmerz \textcolor{red}{entspringt} von den somatosensorischen Strukturen in der Haut und wird von dort zu den höheren Gehirnarealen weitergeleitet. 
-    Die meisten der Nozizeptoren sind einfache Nervenendigungen primärer sensorischer Faser und können generell in drei Gruppen eingeteilt werden, die thermischen, mechanischen und polymodalen Nozizeptoren \textcolor{red}{Kapitel} \citep{kandel2013principles}. Auch die Zellkörper der Nozizeptoren des Körpers liegen im dorsalen Wurzelganglion und terminieren im Hinterhorn des jeweiligen Segments. Ihre Synapsen konzentrieren sich in den Schichten I, IV, V, VII, und X des Hinterhorns \cite[Kap.~25]{paxinos2014rat}.
-    Diese synaptische Verbindung verbindet die Nozizeptoren mit den spinothalamischen Neuronen. Wie der Name dieser Neuronen schon sagt ziehen die Neuronen vom Rückenmark bis in den Thalamus. Die Axone der spinothalamischen Zellen kreuzen auf der Ebene der ersten Synapse die Mittellinie und steigen in der contralateralen weißen Substanz zum lateralen Bereich des Thalamus auf \cite[Kap.~25]{paxinos2014rat}. Bei Ratten bildet die größte Gruppe der spinothalamischen Neurone, die welche auf der Höhe der Halswirbelsäulen der grauen Substanz entspringen. 
-    
-    
-    \begin{itemize}
-        \item protective function, alerting us to injuries that require evasion or treatment. \cite{kandel2013principles}
-        \item Pain arising from
-        somatic structures is transmitted to higher brain cen-
-        ters through the spinothalamic tract pathways in the
-        ventral and lateral funiculi of the spinal cord. \cite{paxinos2014rat}
-        \item most of these nociceptors
-        are simply the free nerve endings of primary sensory
-        neurons. There are three main classes of nociceptors—
-        thermal, mechanical, and polymodal \cite{kandel2013principles} p.531
-        \item whose cell bodies are located in dorsal root
-        ganglia or the trigeminal ganglia. The central branches
-        of these neurons terminate in the spinal cord in a highly
-        orderly manner. Most terminate in the dorsal horn. \cite{kandel2013principles}
-        \item The spinothalamic tract origi-
-        nates primarily from dorsal horn cells concentrated in
-        laminae I, IV, V, VII, and X, i.e., in the marginal zone \cite{paxinos2014rat}
-        \item The spi-
-        nothalamic cells send their axons across the midline, and
-        ascend as the spinothalamic tract in the contralateral white matter to the lateral thalamus. The largest group of spinothalamic neurons in rats is in the upper cervical spinal cord. This cell group projects bilaterally to the thalamus. \cite{paxinos2014rat}
-        \item The axons of spinothalamic cells ascending to the lateral thalamus are somatotopically organized. \cite{paxinos2014rat} p.710
-        \item Lamina I cells ascend in the lateral funciculus, whereas those from deeper laminae IV, V, and X ascend in the ventral white matter. Spinothalamic tract cells that project to the medial and intralaminar thalamus do so through the
-        ventral funiculus
-        \item The targets of the axons of spinothalamic cells in the lateral thalamus include the ventral posterolateral (VPL) nucleus and the posterior thalamic nuclear group (Po). Other spinothalamic tract cells target the medial thalamus, including the central lateral nucleus and the nucleus submedius \cite{paxinos2014rat}
-        \item The thalamus contains several relay nuclei that participate in the central processing of nociceptive information. Two of the most important regions of the thalamus are the lateral and medial nuclear groups. \cite{kandel2013principles} p.544
-        \item zwei andere Wege aus dem peripheren Schmerz und Temperatur Sinn: Spinomesencephalischer Tract und der Spinoreticuläre Tract
-        \item It is well known that the spinoreticu-
-        lar pathway contributes to descending analgesia and
-        autonomic regulation. The spinomesencephalic tract is also involved in noci-ception. However, it is not clear that this tract contributes
-        to the sensory-discriminative aspects of pain. Instead, it
-        is better suited to contribute to the motivational-affective
-        aspects of pain, as well as to trigger activity in descend-
-        ing control systems. \cite{paxinos2014rat}
-        \item Responses to noxious stimuli have been recorded
-        in the primary somatosensory cortex (SmI) of rats
-        \cite{paxinos2014rat}
-        \item The receptive fields of nociceptive corti-
-        cal neurons are larger than those of mechanoreceptive
-        neurons, and there are often inhibitory receptive fields.
-        Nociceptive neurons are generally located in layers V and VI, whereas mechanoreceptive neurons are mainly
-        in layers II–V. \cite{paxinos2014rat}
-        \item The cingulate gyrus and insular cortex con-
-        tain neurons that are activated strongly and selectively
-        by nociceptive somatosensory stimuli (Box 24–1). The
-        cingulate gyrus forms part of the limbic system and is
-        thought to be involved in processing emotional states
-        associated with pain. The insular cortex receives direct
-        projections from the thalamus, specifically the medial nuclei and the ventroposterior medial nucleus. Neurons
-        in the insular cortex process information about the
-        internal state of the body and contribute to the autonomic component of pain responses. \cite{kandel2013principles} p.545
-        
-    \end{itemize}
+
+    \item The gracile and cuneate nuclei are shaped like sau-
+sages with a rostrocaudal orientation. Primary afferent
+fibers terminate on neurons throughout the rostrocau-
+dal extent of each nucleus so that a rod-like collection of
+cells extending the length of the nucleus represents one
+small skin region, and the neurons in any cross section
+represent the entire body. The somatic representation
+in that neural map is of a headless homunculus lying
+on his back with his sacrum toward the midline and his
+hands and feet extended dorsally. Tactile and proprio-
+ceptive information from the head, face, and mouth is
+represented in the adjacent principal trigeminal nucleus.
+
+    \item Axons of neurons in the dorsal column nuclei form the medial lemniscus, which crosses the midline in the medulla and is joined medially by the homologous projection from the trigeminal nuclei. \cite{kandel2013principles} p.492
+    \item Cutaneous information from the dorsal column
+    and trigeminal nuclei enters the lateral and medial
+    ventral posterior nuclei of the thalamus, which form
+    a single functional entity. Proprioceptive information
+    enters the superior ventral posterior nucleus, which
+    lies just above the other two \cite{kandel2013principles} p.493-494
 \end{itemize}
 
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth] {pictures/somatosensory/aufabsteigendeBahnen_Rueckenmark.png}
-    \caption{Caption}
-    \label{fig:bahnen_rueckenmark}
+    \includegraphics{pictures/somatosensory/pathway_somatosensory2.png}
+    \caption[Aufsteigende Bahnen der Somatosensorik]{\textbf{Aufsteigende Bahnen der Somatosensorik}\\
+    Die aufsteigenden Bahnen der Somatosensorik sind getrennt in das lemniskale (rot) und das anterolaterale (braun) System. Beginnend im Rückenmark bis zu zum primären somatosensorischen Cortex posterior vom \textit{Sulcus centralis}.\textcolor{red}{genauere beschreibung der einzelnen Sationen???}\\
+    \cite[Kap.~22]{kandel2013principles}}
+    \label{fig:somato_pathway}
 \end{figure}
+    
+\subsubsection{Schmerz und Temperatursinn (anterolaterales System)}
+Der Schmerz- und Temperatursinn hat vor allem eine schützende Funktion auf unseren Körper. Er warnt uns vor Verletzungen oder zu großer Hitze, worauf wir dann reflexartig reagieren und zurückweichen oder die Verletzung behandeln. Der Schmerz \textcolor{red}{entspringt} von den somatosensorischen Strukturen in der Haut und wird von dort zu den höheren Gehirnarealen weitergeleitet. 
+Die meisten der Nozizeptoren sind einfache Nervenendigungen primärer sensorischer Faser und können generell in drei Gruppen eingeteilt werden, die thermischen, mechanischen und polymodalen Nozizeptoren \textcolor{red}{Kapitel} \citep{kandel2013principles}. Auch die Zellkörper der Nozizeptoren des Körpers liegen im dorsalen Wurzelganglion und terminieren im Hinterhorn des jeweiligen Segments.  Ihre Synapsen konzentrieren sich in den Schichten I, IV, V, VII, und X des Hinterhorns \cite[Kap.~25]{paxinos2014rat}.
+Diese synaptische Verbindung verbindet die Nozizeptoren mit den spinothalamischen Neuronen. Wie der Name dieser Neuronen schon sagt ziehen die Neuronen vom Rückenmark bis in den Thalamus. Die Zellkörper der Neurone liegen in der grauen Substanz des Rückenmarks, während die Axone in der weißen Substanz des Rückenmarks parallel zum Verlauf der Wirbelsäule in Bahnen auf- und absteigen. Die Axone der spinothalamischen Zellen kreuzen auf der Ebene der ersten Synapse die Mittellinie und steigen in der contralateralen weißen Substanz zum lateralen Bereich des Thalamus auf \cite[Kap.~25]{paxinos2014rat}. Bei Ratten bildet die größte Gruppe der spinothalamischen Neurone, die welche auf der Höhe der Halswirbelsäulen der grauen Substanz entspringen.
+
+    
+    
+\begin{itemize}
+    \item protective function, alerting us to injuries that require evasion or treatment. \cite{kandel2013principles}
+    \item Pain arising from
+    somatic structures is transmitted to higher brain cen-
+    ters through the spinothalamic tract pathways in the
+    ventral and lateral funiculi of the spinal cord. \cite{paxinos2014rat}
+    \item most of these nociceptors
+    are simply the free nerve endings of primary sensory
+    neurons. There are three main classes of nociceptors—
+    thermal, mechanical, and polymodal \cite{kandel2013principles} p.531
+    \item whose cell bodies are located in dorsal root
+    ganglia or the trigeminal ganglia. The central branches
+    of these neurons terminate in the spinal cord in a highly
+    orderly manner. Most terminate in the dorsal horn. \cite{kandel2013principles}
+    \item The spinothalamic tract origi-
+    nates primarily from dorsal horn cells concentrated in
+    laminae I, IV, V, VII, and X, i.e., in the marginal zone \cite{paxinos2014rat}
+    \item The spi-
+    nothalamic cells send their axons across the midline, and
+    ascend as the spinothalamic tract in the contralateral white matter to the lateral thalamus. The largest group of spinothalamic neurons in rats is in the upper cervical spinal cord. This cell group projects bilaterally to the thalamus. \cite{paxinos2014rat}
+    \item The axons of spinothalamic cells ascending to the lateral thalamus are somatotopically organized. \cite{paxinos2014rat} p.710
+    \item Lamina I cells ascend in the lateral funciculus, whereas those from deeper laminae IV, V, and X ascend in the ventral white matter. Spinothalamic tract cells that project to the medial and intralaminar thalamus do so through the
+    ventral funiculus
+    \item The targets of the axons of spinothalamic cells in the lateral thalamus include the ventral posterolateral (VPL) nucleus and the posterior thalamic nuclear group (Po). Other spinothalamic tract cells target the medial thalamus, including the central lateral nucleus and the nucleus submedius \cite{paxinos2014rat}
+    \item The thalamus contains several relay nuclei that participate in the central processing of nociceptive information. Two of the most important regions of the thalamus are the lateral and medial nuclear groups. \cite{kandel2013principles} p.544
+    \item zwei andere Wege aus dem peripheren Schmerz und Temperatur Sinn: Spinomesencephalischer Tract und der Spinoreticuläre Tract
+    \item It is well known that the spinoreticu-
+    lar pathway contributes to descending analgesia and
+    autonomic regulation. The spinomesencephalic tract is also involved in noci-ception. However, it is not clear that this tract contributes
+    to the sensory-discriminative aspects of pain. Instead, it
+    is better suited to contribute to the motivational-affective
+    aspects of pain, as well as to trigger activity in descend-
+    ing control systems. \cite{paxinos2014rat}
+    \item Responses to noxious stimuli have been recorded
+    in the primary somatosensory cortex (SmI) of rats
+    \cite{paxinos2014rat}
+    \item The receptive fields of nociceptive corti-
+    cal neurons are larger than those of mechanoreceptive
+    neurons, and there are often inhibitory receptive fields.
+    Nociceptive neurons are generally located in layers V and VI, whereas mechanoreceptive neurons are mainly
+    in layers II–V. \cite{paxinos2014rat}
+    \item The cingulate gyrus and insular cortex con-
+    tain neurons that are activated strongly and selectively
+    by nociceptive somatosensory stimuli (Box 24–1). The
+    cingulate gyrus forms part of the limbic system and is
+    thought to be involved in processing emotional states
+    associated with pain. The insular cortex receives direct
+    projections from the thalamus, specifically the medial nuclei and the ventroposterior medial nucleus. Neurons
+    in the insular cortex process information about the
+    internal state of the body and contribute to the autonomic component of pain responses. \cite{kandel2013principles} p.545
+\end{itemize}
 
 \begin{figure}
         \centering
@@ -302,6 +310,7 @@ Die Axone der Nerven ziehen weiter in die Wirbelsäule und terminieren in der gr
         \caption{Caption}
         \label{fig:graymatter}
     \end{figure}
+
 
 \subsection{Somatosensorik des Kopfes}
 \begin{itemize}
