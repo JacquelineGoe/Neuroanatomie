@@ -16,6 +16,11 @@
 \usepackage{wrapfig}
 \usepackage{setspace}
 
+% ABB. Verzeichnis (mehr Abstand zw. nummer und titel)
+\usepackage{tocloft}
+\setlength{\cftfignumwidth}{1.2cm}
+\setlength{\cfttabnumwidth}{1.2cm}
+
 % Befehle zur Textauszeichnung (hervorheben, unterstreichen ect.)
 \usepackage{color,soul}
 \usepackage{xcolor} % bunter Text
@@ -43,7 +48,7 @@
 
 % Index
 \usepackage{imakeidx}
-\makeindex[intoc, columnseprule, options= -s index_format.ist]
+\makeindex[intoc, columnseprule, options= -s indexformat.ist]
 \newcommand{\indextitle}{\section{Index}}
 
 % Bilder importieren
@@ -54,6 +59,7 @@
 % Bildernummerierung fuer jedes kapitel
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
+\counterwithin{table}{section}
 
 % ich hab keine ahnung was die tun und wir brauchen sie auch nicht
 %\newcommand{\command}[1]{\texttt{#1}}
@@ -63,7 +69,7 @@
 \newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$} }
 
 % kapitel title auf deutsch
-\renewcommand{\bibsection}{\section{Literaturverzeichnis}}
+% \renewcommand{\bibsection}{\section{Literaturverzeichnis}}
 
 
 
@@ -88,7 +94,7 @@
         \vspace{4cm}
         
         \large
-        vorgelegt von \\ Jacqueline Göbl, Julia Grüb und Laura Seidler % Author name
+        vorgelegt von \\ Jacqueline Laura Göbl, Julia Grüb und Laura Seidler % Author name
         \vfill
         \large     
         T\"ubingen, \today
@@ -103,12 +109,13 @@
 \thispagestyle{empty}
 \mbox{}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Inhaltsverzeichnis und Abbildungsverzeichnis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Inhaltsverzeichnis, Tabellen- und Abbildungsverzeichnis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
 \newpage
 \listoffigures
+\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Textbeginn
@@ -125,7 +132,8 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{pictures/Bilder_Jule/Andere/brodmann.PNG}
-    \caption[Brodmann-Areale]{\textbf{Brodmann-Areale.} Die Großhirnrinde wurde durch Brodmann, aufgrund histologischer Merkmale, in 52 Areale unterteilt. \textsuperscript{\cite[9]{trepel2011neuroanatomie}}}
+    \caption[Brodmann-Areale]{\textbf{Brodmann-Areale.} Die Großhirnrinde wurde durch Brodmann, aufgrund histologischer Merkmale, in 52 Areale unterteilt. \\
+    Abbildung aus \textit{Neuroanatomie}, Trepel \textsuperscript{\cite[9]{trepel2011neuroanatomie}}.}
     \label{fig:brodmann_areale}
 \end{figure}{}
 
@@ -134,7 +142,8 @@ Um die zugrundeliegende Struktur des Nervensystems, bzw. des Gehirns, besser bes
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{pictures/Bilder_Jule/Andere/Schnittebenen.png}
-    \caption[Achsen und Schnittebenen]{\textbf{Achsen und Schnittebenen.} \textsuperscript{\cite[15]{kandel2013principles}}}
+    \caption[Achsen und Schnittebenen]{\textbf{Achsen und Schnittebenen.}\\
+    Abbildung aus \textit{Principles  of Neural Science}, Kandel et al. \textsuperscript{\cite[15]{kandel2013principles}}.}
     \label{fig:schnittebenen}
 \end{figure}{}
 
@@ -203,7 +212,8 @@ Der Embryo entwickelt drei Keimblätter: Endoderm, Mesoderm und Ektoderm. Aus di
 \begin{minipage}[b]{0.3\textwidth}
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/Neurulation_crossm1.png}
-    \caption[Neurulation]{\textbf{\newline Neurulation} \textsuperscript{\cite[1]{crossman2014neuroanatomy}}}
+    \caption[Neurulation]{\textbf{\\Neurulation.}\\
+    Abbildung aus \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[1]{crossman2014neuroanatomy}}.}
     \label{fig:neurulation}
     \end{figure}    
 \end{minipage} 
@@ -216,7 +226,8 @@ Zentrales und Peripheres Nervensystem der Wirbeltiere werden von unterschiedlich
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{pictures/Bilder_Jule/Andere/cephalisation.png}
-\caption[Grundgliederung des Säugerhirns]{\textbf{Grundgliederung des Säugerhirns.} \textbf{A}:~primäre Hirnbläschen (3), \textbf{B}:~sekundäre Hirnbläschen (5), \textbf{C}:~Grundgliederung und Ventrikelsystem. Nach Baer \textsuperscript{\cite[7]{neurowissenschaften_baer}}.}
+\caption[Grundgliederung des Säugerhirns]{\textbf{Grundgliederung des Säugerhirns.} \textbf{A}:~primäre Hirnbläschen (3), \textbf{B}:~sekundäre Hirnbläschen (5), \textbf{C}:~Grundgliederung und Ventrikelsystem. \\
+Abbildung nach \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[7]{neurowissenschaften_baer}}.}
 \label{fig:cephalisation}
 \end{figure}
 
@@ -249,7 +260,7 @@ Das \textbf{Telencephalon}\index{Telencephalon} (gelb) ist das rostralste Hirnar
 
 \noindent Das \textbf{Diencephalon}\index{Diencephalon} (orange) schließt sich caudal an das Telencephalon an und wird im superioren Bereich von diesem verdeckt. Es umschließt den dritten Ventrikel (3V), der mittig einen flachen Hohlraum im Gehirn bildet (Abb.~\ref{fig:schaf_midsagittal}~A,B, \ref{fig:coronal_schaf}~F-H). Von superior nach inferior kann das Diencephalon in Epithalamus, Thalamus, Subthalamus und Hypothalamus gegliedert werden. Die Epiphyse\index{Epiphyse} (Epi), als superiorster Teil des Zwischenhirns, gehört zum Epithalamus. Sie liegt caudal im Diencephalon, rostral der Vierhügelplatte, unter dem cerebralen Cortex (Abb.~\ref{fig:schaf_midsagittal}~D). Der Thalamus\index{Thalamus} (Th) bildet einen Teil der Wand des dritten Ventrikels. Er wird vom Hippocampus umschlungen (Abb.~\ref{fig:coronal_schaf}~G). Der Corpus geniculatum laterale\index{Corpus! geniculatum laterale} (LGN), eine Station der Sehbahn, ist superior im Thalamus gelegen. Ebenfalls Teil der Sehnbahn ist das Chiasma opticum\index{Chiasma opticum} (ox), an dem sich die optischen Trakte kreuzen. Diese Faserkreuzung befindet sich rostral des Thalamus und ist inferior an das Diencephalon angelagert (Abb.~\ref{fig:schaf_midsagittal}~A, \ref{fig:schaf_lateral_sagittal}J-L). Inferior des Thalamus, unter dem Subthalamus, liegt der Hypothalamus\index{Hypothalamus}. Er bildet die untere Wand des dritten Ventrikels. Ein Teilgebiet des Hypothalamus ist der Mammillarkörper\index{Mammillarkörper} (MB). Er liegt am inferioren Ende des Gehirns, caudal des optischen Chiasmas (Abb.~\ref{fig:schaf_midsagittal}~A,B).
 
-\noindent Weiter caudal liegt das \textbf{Mesencephalon}\index{Mesencephalon} (blau). Es umschließt das Aqueductus mesencephali (Aq), das zwischen drittem und viertem Ventrikel liegt (Abb.~\ref{fig:schaf_midsagittal}~A,B). Innerhalb des Mesencephalons ist superior das Tectum gelegen. Es besteht aus der Vierhügelplatte\index{Vierhügelplatte}, die aus den superioren\index{Colliculus! superior} (SC) und inferioren Colliculi\index{Colliculus! inferior} (IC) aufgebaut ist. Die paarigen Colliculi superiores liegen rostral und superior der ebenfalls paarigen Colliculi inferiores (Abb.~\ref{fig:schaf_midsagittal}~D), \ref{fig:schaf_lateral_sagittal}~K-L, \ref{fig:coronal_schaf}~H-I). Unter dem Tectum liegt das Tegmentum mesencephali\index{Tegmentum! Tegmentum mesencephali} (Teg). Es liegt zwischen dem Mammillarkörper und dem Rhombencephalon (Abb.~\ref{fig:schaf_midsagittal}~A).
+\noindent Weiter caudal liegt das \textbf{Mesencephalon}\index{Mesencephalon} (blau). Es umschließt das Aqueductus mesencephali (Aq), das zwischen drittem und viertem Ventrikel liegt (Abb.~\ref{fig:schaf_midsagittal}~A,B). Innerhalb des Mesencephalons ist superior das Tectum gelegen. Es besteht aus der Vierhügelplatte\index{Vierhügelplatte}, die aus den superioren\index{Colliculus! superior} (SC) und inferioren Colliculi\index{Colliculus! inferior} (IC) aufgebaut ist. Die paarigen Colliculi superiores liegen rostral und superior der ebenfalls paarigen Colliculi inferiores (Abb.~\ref{fig:schaf_midsagittal}~D), \ref{fig:schaf_lateral_sagittal}~K-L, \ref{fig:coronal_schaf}~H-I). Unter dem Tectum liegt das Tegmentum mesencephali\index{Tegmentum! mesencephali} (Teg). Es liegt zwischen dem Mammillarkörper und dem Rhombencephalon (Abb.~\ref{fig:schaf_midsagittal}~A).
 
 \noindent Das Rhombencephalon\index{Rhombencephalon} (grün) ist in Met- und Myelencephalon unterteilt. Im inferioren \textbf{Metencephalon}\index{Metencephalon} liegt der Pons\index{Pons} (Pn: Abb.~\ref{fig:schaf_midsagittal}~A, \ref{fig:coronal_schaf}~I-J). Im superioren Bereich des Metencephalons, über dem Pons, befindet sich das Cerebellum\index{Cerebellum! allgemein} (Cb: Abb.\ref{fig:schaf_midsagittal}~A). Es ist über die Fasern der Kleinhirnstiele oder Kleinhirn-Pedunkel\index{Kleinhirnpedunkel} (cp) mit Mesencephalon, Pons und Medulla verbunden (Abb.~\ref{fig:schaf_lateral_sagittal}~D-E, \ref{fig:coronal_schaf}~I). Die Kleinhirnsegel oder Veli\index{Velum} (ve) bilden das Dach des vierten Ventrikels (4V), der sich zwischen Pons und Cerebellum in rostro-caudaler Richtung erstreckt (Abb.~\ref{fig:schaf_midsagittal}~A, \ref{fig:coronal_schaf}~J). Das \textbf{Myelencephalon}\index{Myelencephalon} besteht aus der Medulla\index{Medulla oblongata} (Med), die caudal an den Pons angrenzt. Weiter caudal geht die Medulla in das Rückenmark\index{Rückenmark} (CS) über. Dabei geht der offene vierte Ventrikel, der superior entlang der Medulla verläuft, in den geschlossenen Zentralkanal des Rückenmarks über (Abb.~\ref{fig:schaf_midsagittal}~A,E, \ref{fig:coronal_schaf}~L).
 
@@ -372,7 +383,8 @@ Basierend auf der cortikalen Faltung können Säugetiere in lissencephale und gy
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/grosshirnrinde.png}
-	\caption[Lappen und Sulci der Großhirnrinde]{\textbf{Lappen und Sulci der Großhirnrinde.} \textbf{A:} Großhirnrinde des Schafes, \textbf{B:} Großhirnrinde des Menschen \textsuperscript{\cite[7]{neurowissenschaften_baer}}. Die Großhirnrinde (gelb bis bräunlich) kann anhand der Sulci in vier Lappen (\textit{Lobi cerebri}) unterteilt werden: Frontallappen, Parietallappen, Temporallappen und Okzipitallappen.\index{Lobi cerebri}}
+	\caption[Lappen und Sulci der Großhirnrinde]{\textbf{Lappen und Sulci der Großhirnrinde.} \textbf{A:} Großhirnrinde des Schafes, \textbf{B:} Großhirnrinde des Menschen. Die Großhirnrinde (gelb bis bräunlich) kann anhand der Sulci in vier Lappen (\textit{Lobi cerebri}) unterteilt werden: Frontallappen, Parietallappen, Temporallappen und Okzipitallappen\index{Lobi cerebri}. \\
+	Abbildung B nach \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[7]{crossman2014neuroanatomy}}.}
 	\label{fig:cortex_lappen} 
 \end{figure}
 
@@ -393,7 +405,7 @@ In der Großhirnrinde findet die Informationsverarbeitung in verschiedenen Areal
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.69\textwidth]{pictures/Bilder_Jule/Andere/Grosshirnrinde_sensorik_motorik.png}
-    \caption[Sensorische, motorische und assoziative Areale der Großhirnrinde]{\textbf{Sensorische, motorische und assoziative Areale der Großhirnrinde} \textsuperscript{\cite[14]{penzlin2005tierphys}}}
+    \caption[Sensorische, motorische und assoziative Areale der Großhirnrinde]{\textbf{Sensorische, motorische und assoziative Areale der Großhirnrinde.} Abbildung aus \textit{Lehrbuch der Tierphysiologie}, Pezlin \textsuperscript{\cite[14]{penzlin2005tierphys}}.}
     \label{fig:grosshirnrinde_sensorik_motorik}
 \end{figure}
 
@@ -404,7 +416,7 @@ In der Großhirnrinde findet die Informationsverarbeitung in verschiedenen Areal
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{pictures/Bilder_Jule/Andere/grosshirnrinde_vgl.png}
-    \caption[Verhältnis sensorischer, motorischer und assoziativer Areale der Großhirnrinde.]{\textbf{Verhältnis sensorischer, motorischer und assoziativer Areale der Großhirnrinde.} Dargestellt ist die Ausdehnung der sensorischen und motorischen Projektionsfelder (schwarz-weiß) und der assoziativen Felder (rot) verschiedener Säugetiere. \textsuperscript{\cite[14]{penzlin2005tierphys}}}
+    \caption[Verhältnis sensorischer, motorischer und assoziativer Areale der Großhirnrinde.]{\textbf{Verhältnis sensorischer, motorischer und assoziativer Areale der Großhirnrinde.} Dargestellt ist die Ausdehnung der sensorischen und motorischen Projektionsfelder (schwarz-weiß) und der assoziativen Felder (rot) verschiedener Säugetiere. Abbildung aus \textit{Lehrbuch der Tierphysiologie}, Penzlin \textsuperscript{\cite[14]{penzlin2005tierphys}}.}
     \label{fig:grosshinrinde_vgl}
 \end{figure}{}
 
@@ -416,7 +428,8 @@ Obwohl sich die verschiedenen Areale der Großhirnrinde funktionell unterscheide
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/neocortex_schichtung.png}
-	\caption[Schichtung des Neocortex]{\textbf{Schichtung des Neocortex.} \textbf{A}:~Schematische Darstellung der Schichten des Neocortex des Menschen unter Verwendung der Golgi-, Nissl- und Markscheidenfärbung \textsuperscript{\cite{taschenbuch_histologie}}. \textbf{B}:~Mikroskopie des Neocortex der Ratte unter Verwendung der Nisslfärbung. WS = weiße Substanz - darüber die sechsschichtige graue Substanz.}
+	\caption[Schichtung des Neocortex]{\textbf{Schichtung des Neocortex.} \textbf{A}:~Schematische Darstellung der Schichten des Neocortex des Menschen unter Verwendung der Golgi-, Nissl- und Markscheidenfärbung. \textbf{B}:~Mikroskopie des Neocortex der Ratte unter Verwendung der Nisslfärbung. WS = weiße Substanz - darüber die sechsschichtige graue Substanz.\\
+	Abbildung A aus \textit{Taschenlehrbuch Histologie}, Lüllmann-Rauch und Asan \textsuperscript{\cite{taschenbuch_histologie}}.}
 	\label{fig:neoccortex_schichtung}
 \end{figure}
 
@@ -470,7 +483,8 @@ Die weiße Substanz, die unter der Oberfläche des Cortex liegt, kann nach ihrem
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/cortico-cortical_(crossm13).png}
-    \caption[Cortico-cortikale Verbindungen]{\textbf{Cortico-cortikale Verbindungen.} Verlauf der neuronalen Bahnen des cerebralen Cortex in der Coronal-Ebene (oben) und Midsagittal-Ebene (unten). \textsuperscript{\cite[13]{crossman2014neuroanatomy}}.}
+    \caption[Cortico-cortikale Verbindungen]{\textbf{Cortico-cortikale Verbindungen.} Verlauf der neuronalen Bahnen des cerebralen Cortex in der Coronal-Ebene (oben) und Midsagittal-Ebene (unten).\\
+    Abbildung nach \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[13]{crossman2014neuroanatomy}}.}
     \label{fig:cortico-cortical}
 \end{figure}{}
 
@@ -531,7 +545,7 @@ Der Thalamus stellt die größte Untereinheit des Diencephalons dar. Gemeinsam m
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/thalamus.png}
-    \caption[Projektionen thalamischer Nuclei]{\textbf{Projektionen thalamischer Nuclei.} Dargestellt sind die verschiedenen Teilbereiche des Thalamus, sowie die zugehörigen Areale der Großhirnrinde, mit denen sie in Verbindung stehen. Zum Thalamus gehören unter Anderem der Corpus geniculatum mediale (MGN~- hier MG) und der Corpus geniculatum laterale (LGN~- hier LG). \textbf{A:} anterior-laterale Ansicht, \textbf{B:} Coronalschnitt, \textbf{C:} laterale Ansicht des cerebralen Cortex, \textbf{D:} mediale Aspekte des cerebralen Cortex. Die Farbgebung indiziert die Beziehungen, bzw. Projektionen zwischen den thalamischen Nuclei und den zugehörigen Arealen der Großhirnrinde.\index{Thalamus} \textsuperscript{\cite[12]{crossman2014neuroanatomy}}}
+    \caption[Projektionen thalamischer Nuclei]{\textbf{Projektionen thalamischer Nuclei.} Dargestellt sind die verschiedenen Teilbereiche des Thalamus, sowie die zugehörigen Areale der Großhirnrinde, mit denen sie in Verbindung stehen. Zum Thalamus gehören unter Anderem der Corpus geniculatum mediale (MGN~- hier MG) und der Corpus geniculatum laterale (LGN~- hier LG). \textbf{A:} anterior-laterale Ansicht, \textbf{B:} Coronalschnitt, \textbf{C:} laterale Ansicht des cerebralen Cortex, \textbf{D:} mediale Aspekte des cerebralen Cortex. Die Farbgebung indiziert die Beziehungen, bzw. Projektionen zwischen den thalamischen Nuclei und den zugehörigen Arealen der Großhirnrinde.\index{Thalamus} Abbildung aus \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[12]{crossman2014neuroanatomy}}.}
     \label{fig:thalamus_nuclei}
 \end{figure}
 
@@ -592,7 +606,7 @@ Das Tectum liegt caudal des diencephalen präoptischen Areals und ist dorsal, bz
 
 
 \subsubsection{Tegmentum mesencephali}
-\index{Tegmentum! Tegmentum mesencephali}
+\index{Tegmentum! mesencephali}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Der sich im Mesencephalon befindende Teil des Tegmentums befindet sich inferior des Tectums. Es besitzt hauptsächlich motorische Funktionen. So liegen in ihm wichtige Kerngebiete des (extrapyramidalen) motorischen Systems \textsuperscript{\cite[14]{penzlin2005tierphys}}.
@@ -643,7 +657,7 @@ Das Metencephalon oder auch Hinterhirn ist Teil des Rhombencephalons (Rautenhirn
 \label{subsubsec:Pons} \index{Pons}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Der Pons oder das Brückenhirn beschreibt jenen Teil des Metencephalons, der direkt zwischen Mes- und Myelencephalon und inferior des Cerebellums liegt. Der Pons bildet einen von Außen gut sichtbaren, dicken Wulst, der aus vielen Fasern, aber auch aus grauer Substanz besteht. Im inferioren, bzw. ventralen Bereich, der sogenannten \textbf{Brückenhaube}, liegt das Tegmentum\index{Tegmentum! Tegmentum pontine}, in dem einige Hirnnervenkerne lokalisiert sind. Dazu gehören der Nucleus des N. abducens und des N. facialis. Auch die Nuclei des Trapezkörpers und des medialen Lemniscus sind dort lokalisiert.
+Der Pons oder das Brückenhirn beschreibt jenen Teil des Metencephalons, der direkt zwischen Mes- und Myelencephalon und inferior des Cerebellums liegt. Der Pons bildet einen von Außen gut sichtbaren, dicken Wulst, der aus vielen Fasern, aber auch aus grauer Substanz besteht. Im inferioren, bzw. ventralen Bereich, der sogenannten \textbf{Brückenhaube}, liegt das Tegmentum\index{Tegmentum! pontine}, in dem einige Hirnnervenkerne lokalisiert sind. Dazu gehören der Nucleus des N. abducens und des N. facialis. Auch die Nuclei des Trapezkörpers und des medialen Lemniscus sind dort lokalisiert.
 
 \begin{figure}[H]
     \centering
@@ -685,7 +699,8 @@ Das Myelencephalon (Nachhirn) besteht aus der \textbf{Medulla oblongata}, auch v
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{pictures/Bilder_Jule/Andere/medulla_schema.jpg}
-    \caption[Aufbau der Medulla]{\textbf{Aufbau der Medulla.} Gezeigt ist ein schematischer Querschnitt durch die Medulla, bzw. den Hirnstamm. Die superiore, bzw. dorsale, sensorische Seite ist nach oben, die inferiore, bzw. ventrale, motorische Seite nach unten orientiert. {\textsuperscript{\cite[14]{penzlin2005tierphys}}}}
+    \caption[Aufbau der Medulla]{\textbf{Aufbau der Medulla.} Gezeigt ist ein schematischer Querschnitt durch die Medulla, bzw. den Hirnstamm. Die superiore, bzw. dorsale, sensorische Seite ist nach oben, die inferiore, bzw. ventrale, motorische Seite nach unten orientiert.\\
+    Abbildung aus \textit{Lehrbuch der Tierphysiologie}, Penzlin {\textsuperscript{\cite[14]{penzlin2005tierphys}}}.}
     \label{fig:medulla_schema}
 \end{figure}{}
 
@@ -704,7 +719,7 @@ Das Myelencephalon (Nachhirn) besteht aus der \textbf{Medulla oblongata}, auch v
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Unter dem Begriff Hirnstamm (\textit{Truncus cerebri}) werden die ventralen Bereiche des Mittelhirns (Mesencephalon), des Hinterhirns (Metencephalon) und des Nachhirns (Myelencephalon) zusammengefasst. Es besteht somit aus Teilen des Mittelhirns, sowie aus dem Pons und der Medulla. Rostral, vor dem Hirnstamm, liegt das Zwischenhirn (Diencephalon), caudal, hinter dem Hirnstamm, folgt das Rückenmark. Im Hirnstamm sind motorische Zentren lokalisiert, die für die Kontrolle der Körperhaltung und Bewegung zuständig sind. Diese Bereiche werden im Allgemeinen auch als \textbf{Tegmentum} bezeichnet. Es kann, dem Verlauf des Ventrikelsystems folgend, in drei Unterbereiche gegliedert werden: Das \textit{Tegmentum mesencephali}\index{Tegmentum! Tegmentum mesencephali} befindet sich im ventralen, bzw. inferioren Mittelhirn \textsuperscript{\cite[6]{trepel2011neuroanatomie}}. Das \textit{Tegmentum pontine}\index{Tegmentum! Tegmentum mesencephali} ist ebenfalls ventral gelegen und befindet sich im Pons. Der Bereich des Tegmentums, der sich in der Medulla befindet, wird \textit{Tegmentum myelencephali}\index{Tegmentum! Tegmentum myelencephali} genannt. Im Vergleich zum Mes- und Metencephalon ist das Tegmentum im Myelencephalon dorsal, bzw. superior gelegen \textsuperscript{\cite[5]{trepel2011neuroanatomie}}.\\
+Unter dem Begriff Hirnstamm (\textit{Truncus cerebri}) werden die ventralen Bereiche des Mittelhirns (Mesencephalon), des Hinterhirns (Metencephalon) und des Nachhirns (Myelencephalon) zusammengefasst. Es besteht somit aus Teilen des Mittelhirns, sowie aus dem Pons und der Medulla. Rostral, vor dem Hirnstamm, liegt das Zwischenhirn (Diencephalon), caudal, hinter dem Hirnstamm, folgt das Rückenmark. Im Hirnstamm sind motorische Zentren lokalisiert, die für die Kontrolle der Körperhaltung und Bewegung zuständig sind. Diese Bereiche werden im Allgemeinen auch als \textbf{Tegmentum} bezeichnet. Es kann, dem Verlauf des Ventrikelsystems folgend, in drei Unterbereiche gegliedert werden: Das \textit{Tegmentum mesencephali}\index{Tegmentum! mesencephali} befindet sich im ventralen, bzw. inferioren Mittelhirn \textsuperscript{\cite[6]{trepel2011neuroanatomie}}. Das \textit{Tegmentum pontine}\index{Tegmentum! mesencephali} ist ebenfalls ventral gelegen und befindet sich im Pons. Der Bereich des Tegmentums, der sich in der Medulla befindet, wird \textit{Tegmentum myelencephali}\index{Tegmentum! myelencephali} genannt. Im Vergleich zum Mes- und Metencephalon ist das Tegmentum im Myelencephalon dorsal, bzw. superior gelegen \textsuperscript{\cite[5]{trepel2011neuroanatomie}}.\\
 
 \noindent Doch der Hirnstamm besitzt neben den motorischen auch andere Funktionen. So liegen in ihm auch relativ autonome, vegetative Zentren, die beispielsweise Atem- und Kreislaufsystem steuern \textsuperscript{\cite[14]{penzlin2005tierphys}}. Eines dieser Zentren ist die \textbf{Formatio reticularis}\index{Formatio reticularis}. Sie erstreckt sich vom Mesencephalon über den Pons und die Medulla bis hinab ins Rückenmark. Durch die Formatio reticularis werden sowohl sympathische als auch parasympathische Zentren gesteuert. Sie selbst wird vom Hypothalamus kontrolliert. Funktionell lässt sich die Formatio reticularis in eine Vielzahl kleinerer Zentren unterteilen. Sowohl motorische Zentren, wie das sogenannte Motorische Zentrum und das Augenbewegungszentrum, als auch Kreislauf- und Atemzentren sind in ihr lokalisiert. Des Weiteren beinhaltet sie das sogenannte Brechzentrum und das Miktionszentrum \textsuperscript{\cite[6]{trepel2011neuroanatomie}}.
 
@@ -720,8 +735,8 @@ Das Rückenmark zeigt eine dorso-ventrale Organisation auf (Abb.~\ref{fig:rucken
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.6\textwidth]{pictures/Bilder_Jule/Andere/rueckenmark_schema.jpg}
-     \caption[Aufbau des Rückenmarks]{\textbf{Aufbau des Rückenmarks.} Gezeigt ist ein schematischer Querschnitt durch das Rückenmark. Das dorsale Hinterhirn liegt oben, das ventrale Vorderhorn unten. \textsuperscript{\cite[14]{penzlin2005tierphys}}}
+     \includegraphics[width=0.59\textwidth]{pictures/Bilder_Jule/Andere/rueckenmark_schema.jpg}
+     \caption[Aufbau des Rückenmarks]{\textbf{Aufbau des Rückenmarks.} Gezeigt ist ein schematischer Querschnitt durch das Rückenmark. Das dorsale Hinterhirn liegt oben, das ventrale Vorderhorn unten. Abbildung aus \textit{Lehrbuch der Tierphysiologie}, Penzlin \textsuperscript{\cite[14]{penzlin2005tierphys}}.}
      \label{fig:ruckenmark_schema}
  \end{figure}{}
 
@@ -729,8 +744,9 @@ Das Rückenmark zeigt eine dorso-ventrale Organisation auf (Abb.~\ref{fig:rucken
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.8\textwidth]{pictures/Bilder_Jule/Andere/rueckenmark_wirbelsaeule.png}
-     \caption[Querschnitt durch Wirbelsäule und Rückenmark]{\textbf{Querschnitt durch Wirbelsäule und Rückenmark.} Aufhängung des Rückenmarks innerhalb der Wirbelsäule eines höheren Primaten. Die dorsale Seite ist nach oben, die ventrale nach unten orientiert. \textsuperscript{\cite[6]{storch2012lehrbuchzoo}}}
+     \includegraphics[width=0.79\textwidth]{pictures/Bilder_Jule/Andere/rueckenmark_wirbelsaeule.png}
+     \caption[Querschnitt durch Wirbelsäule und Rückenmark]{\textbf{Querschnitt durch Wirbelsäule und Rückenmark.} Aufhängung des Rückenmarks innerhalb der Wirbelsäule eines höheren Primaten. Die dorsale Seite ist nach oben, die ventrale nach unten orientiert.\\
+     Abbildung aus \textit{Kurzes Lehrbuch der Zoologie}, Storch und Welsch \textsuperscript{\cite[6]{storch2012lehrbuchzoo}}.}
      \label{fig:ruckenmark_wirbelsaeule}
 \end{figure}
 
@@ -744,15 +760,17 @@ Das Rückenmark zeigt eine dorso-ventrale Organisation auf (Abb.~\ref{fig:rucken
 Zwischen dem Gehirn und den peripheren Strukturen verlaufen insgesamt zwölf Hirnnerven. Diese bilateralen, gepaarten Nerven beinhalten sowohl afferente als auch efferente Fasern. Die Nummerierung der Hirnnerven verläuft von rostral nach caudal. Die ersten beiden Hirnnerven liegen am Vorderhirn. Der \textbf{N. olfactorius (I)}\index{Hirnnerven! 01. N. olfactorius} beinhaltet sensorische Fasern, die Information aus dem Riechepithel zum Bulbus olfactorius weiterleiten. Er ist wesentlicher Bestandteil des Geruchssinns. Der zweite Hirnnerv, der \textbf{N. opticus (II)}\index{Hirnnerven! 02. N. opticus} beinhaltet ebenfalls ausschließlich sensorische Fasern. Diese leiten Informationen aus der Retina zum Nucleus geniculatum laterale weiter. Der N. opticus ermöglicht das Sehen und ist zudem am Pupillenreflex beteiligt. Die restlichen Hirnnerven sind am Hirnstamm lokalisiert (Abb.~\ref{fig:hirnnerven_schaf}) \textsuperscript{\cite[10]{crossman2014neuroanatomy}}. \\
 
 \noindent Der \textbf{N. oculomotorius (III)}\index{Hirnnerven! 03. N. oculomotorius} beinhaltet sowohl motorische als auch parasympathische Fasern. Die motorischen Fasern innervieren extraokulare Muskeln, die die Augenbewegungen steuern, wie den superioren, inferioren und medialen Musculus rectus. Der Großteil dieser motorischen Fasern entspringt dem Nucleus oculomotorius, der sich im Mesencephalon etwa auf Höhe des Colliculus superior befindet. Über den N. oculomotorius werden Augenbewegungen gesteuert, sowie das Anheben des oberen Augenlids. Die parasympathischen Fasern des N. oculomotorius erhalten Informationen aus dem Edinger-Westphal Nucleus (\textit{Nucleus accessorius nervi oculomotorii}). Diese Fasern innervieren den Musculus sphincter pupillae, den Ringmuskel des Auges, der die Pupille verengt, sowie den Ziliarmuskel des Auges, der an Augenbewegungen beteiligt ist. Durch diese Verbindung ist der N. oculomotor auch auch an der Pupillenkontraktion und der Pupillenakkommodierung beteiligt. Ähnlich wie der N. opticus ist auch der \textbf{N. trochlearis (IV)}\index{Hirnnerven! 04. N. trochlearis} funktionell für die Augenbewegungen zuständig. Er enthält motorische Fasern, die vom Nucleus trochlearis zum Musculus obliquus superior der äußeren Augenmuskulatur ziehen. Der \textbf{N. trigeminus (V)}\index{Hirnnerven! 05. N. trigeminus} enthält sowohl motorische als auch sensorische Fasern. Die sensorischen Fasern enthalten Informationen aus Gesicht, Kopfhaut, Augenhornhaut, Nasen- und Mundhöhle, sowie der Dura mater des Schädels. Diese Informationen werden zum sensorischen Nucleus des Trigeminus weitergeleitet. Die Funktion des sensorischen fünften Hirnnerven besteht in der Sinneswahrnehmung des Kopfes. Die motorischen Fasern dieses Nervs ziehen von den Motornuclei zu den Musculi masticatorii (Kaumuskulatur) und dem Musculus tensor tympani (Spanner des Trommelfell). Durch diese Projektionen ist der N. trigeminus in das Öffnen und Schließen des Mundes, sowie in die Spannung des Trommelfells involviert. Ein weiterer Hirnnerv, der in die Augenbewegung involviert ist, ist der \textbf{N. abducens (VI)}\index{Hirnnerven! 06. N. abducens}. Er führt motorische Fasern, die vom Nucleus abducens aus dem caudalen Pons zum lateralen Musculus rectus ziehen. Im \textbf{N. facialis (VII)}\index{Hirnnerven! 07. N. facialis} verlaufen sowohl sensorische, motorische und parasympathische Fasern. Die sensorischen Fasern entspringen dem anterior gelegenen Zweidrittel der Zunge und enden im Nucleus solitarius. Diese sensorischen Fasern sind für den Geschmackssinn verantwortlich. 
-Ein Teil der motorischen Fasern des Facialis verläuft vom Nucleus facialis zum Musculus stapedius, der am Stapediusreflex beteiligt ist. Dadurch kann die Spannung der Mittelohrmuskulatur reguliert werden. Andere motorische Fasern enden an jenen Muskeln, die für die Mimik zuständig sind.  Die parasympathischen Fasern des N. facialis sind für den Speichel- und Tränenfluss verantwortlich. Sie ziehen vom superioren Nucleus salivatorius zu den Speichel- und Tränendrüsen. Der achte Hirnnerv, der \textbf{N. vestibulocochlearis (VIII)}\index{Hirnnerven! 08. N. vestibulocochlearis} enthält sensorische Fasern. Diese ziehen vom Vestibularorgan und der Cochlea zu den Nuclei vestibularis, bzw. den Nuclei cochlearis. Funktionell ist der N. Vestibulocochlearis für den Gleichgewichts- und Hörsinn verantwortlich. Der \textbf{N. glossopharyngeus (IX)}\index{Hirnnerven! 09. N. glossopharyngeus} beinhaltet sensorische, motorische und parasympathische Fasern. Ein Teil der sensorischen Fasern ist an der allgemeinen Sinneswahrnehmung beteiligt. Sie ziehen aus dem Pharynx, dem posterioren Drittel der Zunge, der Eustachischen Röhre und dem Mittelohr zum sensorischen Nucleus des Trigeminus. Ein weiterer Teil der sensorischen Fasern ist speziell für den Geschmackssinn, Chemorezeption und Druckrezeption verantwortlich. Diese Fasern entspringen unter anderem dem posterioren Drittel der Zunge, sowie dem Sinus caroticus, einer Gefäßerweiterung, die mittels Druckrezeptoren bei der Regulation des Blutdrucks mitwirkt. Die motorischen Fasern des N. glossopharyngeus entspringen dem Nucleus ambiguus und enden im Musculus stylopharyngeus, der für das Schlucken zuständig ist. Ähnlich wie die parasympathischen Fasern des N. facialis sind die parasympathischen Fasern des N. glossopharyngeal ebenfalls am Speichelfluss beteiligt. Sie ziehen vom inferioren Nucleus salivatorius zur Ohrspeicheldrüse (Glandula parotis). Auch der zehnte Hirnnerv, der \textbf{N. vagus (X)}\index{Hirnnerven! 10. N. vagus}, führt alle drei Fasertypen. Die sensorischen Fasern ziehen dabei teilweise, ähnlich wie die Fasern des IX, aus Rachen (Pharynx), Kehlkopf (Larynx), Luftröhre (Trachea), Speiseröhre (Oesophagus) und dem Außenohr zum sensorischen Nucleus des Trigeminus. Diese Fasern sind funktionell in die allgemeine Sinneswahrnehmung involviert. 
-Ein anderer Teil der sensorischen Fasern des Vagusnervs entspringt den Eingeweiden in Thorax und Abdomen, dem Glomus aorticum, und dem Aortenbogen (Arcus aortae). Diese sensorischen Fasern enden im Nucleus solitarius und sind für die viszerale Sinneswahrnehmung, bzw. Chemo- und Druckrezeption zuständig. Die motorischen Fasern des N. vagus entspringen dem Nucleus ambiguus und führen wiederum zum Gaumensegel (Velum palatinum), Pharynx, Larynx und oberen Oesophagus. Ihre Funktion besteht im Schlucken und Sprechen. Die im Vagusnerv enthaltenen parasympathischen Fasern verlaufen vom dorsalen Motornucleus des Vagusnervs zu dem thorakalen und abdominalen Eingeweiden. Diese Fasern sind für die Innervation der Herzmuskulatur (Myokard), der Drüsen des Herzkreislaufsystems, sowie der Atemwege und des Magen-Darm-Trakts zuständig. Der \textbf{N. accessorius (XI)}\index{Hirnnerven! 11. N. accessorius} führt ausschließlich motorische Fasern, die den Musculus sternocleidomastoideus ('Kopfnicker') der Halsmuskulatur und den Musculus trapezius der Schultermuskulatur innerviert. Er ist für die Bewegung von Hals und Schultern zuständig. Der N. accessorius weißt eine starke Verbindung zum Rückenmark auf. Der letzte Hirnnerv, der \textbf{N. hypoglossus (XII)}\index{Hirnnerven! 12. N. hypoglossus}, enthält ebenfalls Motorneurone. Diese innervieren, vom Nucleus hypoglossus ausgehend, die innere und äußere Zungenmuskulatur. Dadurch ist er funktionell für die Bewegung der Zunge zuständig \textsuperscript{\cite[10]{crossman2014neuroanatomy}}.
+Ein Teil der motorischen Fasern des Facialis verläuft vom Nucleus facialis zum Musculus stapedius, der am Stapediusreflex beteiligt ist. Dadurch kann die Spannung der Mittelohrmuskulatur reguliert werden. Andere motorische Fasern enden an jenen Muskeln, die für die Mimik zuständig sind.  Die parasympathischen Fasern des N. facialis sind für den Speichel- und Tränenfluss verantwortlich. Sie ziehen vom superioren Nucleus salivatorius zu den Speichel- und Tränendrüsen. Der achte Hirnnerv, der \textbf{N. vestibulocochlearis (VIII)}\index{Hirnnerven! 08. N. vestibulocochlearis} enthält sensorische Fasern. Diese ziehen vom Vestibularorgan und der Cochlea zu den Nuclei vestibularis, bzw. den Nuclei cochlearis. Funktionell ist der N. Vestibulocochlearis für den Gleichgewichts- und Hörsinn verantwortlich. Der \textbf{N. glossopharyngeus (IX)}\index{Hirnnerven! 09. N. glossopharyngeus} beinhaltet sensorische, motorische und 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_Jule/Schaf/Aussenansicht/Hirnnerven.png}
-    \caption[Hirnnerven Schaf]{\textbf{Hirnnerven Schaf.} \textbf{LINKS:} Ventralansicht des Schafshirn. Gekennzeichnet sind die Hirnnervenkerne. Der Bulbus olfactorius (OB), der Mammillarkörper (MB), der Pons (Pon), der Trapezkörper (tz), sowie die Medulla (Med) sind ebenfalls gekennzeichnet. Da der N. trochlearis nicht sichtbar ist, ist lediglich seine ungefähre Position markiert. \textbf{RECHTS:} dorsale Ansicht des Hirnstamms des Schafs. Markiert sind die Nuclei der Hirnnerven. Dabei sind die sensorischen Kerngebiete links, die motorischen rechts gekennzeichnet \textsuperscript{\cite[10]{crossman2014neuroanatomy}}. \textcolor{red}{BILD am Ende so oben in den Text, dass es passt und der Text nicht so ein großer Block ist...}}
+    \caption[Hirnnerven Schaf]{\textbf{Hirnnerven Schaf.} \textbf{LINKS:} Ventralansicht des Schafshirn. Gekennzeichnet sind die Hirnnervenkerne. Der Bulbus olfactorius (OB), der Mammillarkörper (MB), der Pons (Pon), der Trapezkörper (tz), sowie die Medulla (Med) sind ebenfalls gekennzeichnet. Da der N. trochlearis nicht sichtbar ist, ist lediglich seine ungefähre Position markiert. \textbf{RECHTS:} dorsale Ansicht des Hirnstamms des Schafs. Markiert sind die Nuclei der Hirnnerven. Dabei sind die sensorischen Kerngebiete links, die motorischen rechts gekennzeichnet. Abbildung nach \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[10]{crossman2014neuroanatomy}}.}
     \label{fig:hirnnerven_schaf}
 \end{figure}{}
+
+parasympathische Fasern. Ein Teil der sensorischen Fasern ist an der allgemeinen Sinneswahrnehmung beteiligt. Sie ziehen aus dem Pharynx, dem posterioren Drittel der Zunge, der Eustachischen Röhre und dem Mittelohr zum sensorischen Nucleus des Trigeminus. Ein weiterer Teil der sensorischen Fasern ist speziell für den Geschmackssinn, Chemorezeption und Druckrezeption verantwortlich. Diese Fasern entspringen unter anderem dem posterioren Drittel der Zunge, sowie dem Sinus caroticus, einer Gefäßerweiterung, die mittels Druckrezeptoren bei der Regulation des Blutdrucks mitwirkt. Die motorischen Fasern des N. glossopharyngeus entspringen dem Nucleus ambiguus und enden im Musculus stylopharyngeus, der für das Schlucken zuständig ist. Ähnlich wie die parasympathischen Fasern des N. facialis sind die parasympathischen Fasern des N. glossopharyngeal ebenfalls am Speichelfluss beteiligt. Sie ziehen vom inferioren Nucleus salivatorius zur Ohrspeicheldrüse (Glandula parotis). Auch der zehnte Hirnnerv, der \textbf{N. vagus (X)}\index{Hirnnerven! 10. N. vagus}, führt alle drei Fasertypen. Die sensorischen Fasern ziehen dabei teilweise, ähnlich wie die Fasern des IX, aus Rachen (Pharynx), Kehlkopf (Larynx), Luftröhre (Trachea), Speiseröhre (Oesophagus) und dem Außenohr zum sensorischen Nucleus des Trigeminus. Diese Fasern sind funktionell in die allgemeine Sinneswahrnehmung involviert. 
+Ein anderer Teil der sensorischen Fasern des Vagusnervs entspringt den Eingeweiden in Thorax und Abdomen, dem Glomus aorticum, und dem Aortenbogen (Arcus aortae). Diese sensorischen Fasern enden im Nucleus solitarius und sind für die viszerale Sinneswahrnehmung, bzw. Chemo- und Druckrezeption zuständig. Die motorischen Fasern des N. vagus entspringen dem Nucleus ambiguus und führen wiederum zum Gaumensegel (Velum palatinum), Pharynx, Larynx und oberen Oesophagus. Ihre Funktion besteht im Schlucken und Sprechen. Die im Vagusnerv enthaltenen parasympathischen Fasern verlaufen vom dorsalen Motornucleus des Vagusnervs zu dem thorakalen und abdominalen Eingeweiden. Diese Fasern sind für die Innervation der Herzmuskulatur (Myokard), der Drüsen des Herzkreislaufsystems, sowie der Atemwege und des Magen-Darm-Trakts zuständig. Der \textbf{N. accessorius (XI)}\index{Hirnnerven! 11. N. accessorius} führt ausschließlich motorische Fasern, die den Musculus sternocleidomastoideus ('Kopfnicker') der Halsmuskulatur und den Musculus trapezius der Schultermuskulatur innerviert. Er ist für die Bewegung von Hals und Schultern zuständig. Der N. accessorius weißt eine starke Verbindung zum Rückenmark auf. Der letzte Hirnnerv, der \textbf{N. hypoglossus (XII)}\index{Hirnnerven! 12. N. hypoglossus}, enthält ebenfalls Motorneurone. Diese innervieren, vom Nucleus hypoglossus ausgehend, die innere und äußere Zungenmuskulatur. Dadurch ist er funktionell für die Bewegung der Zunge zuständig \textsuperscript{\cite[10]{crossman2014neuroanatomy}}.
 
 
 \subsection{Externe Merkmale des Gehirns}
@@ -768,7 +786,8 @@ Drei Hirnhäute liegen zwischen dem Gehirn und dem Schädelknochen (Abb.~\ref{fi
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{pictures/Bilder_Jule/Andere/hirnhaeute2.png}
-	\caption[Die Hirnhäute]{\textbf{Die Hirnhäute.} \textbf{A}: Anordnung der drei Hirnhäute als Schema. \textbf{B}: Veranschaulichung der Hirnhäute am Schafhirn. Über der linken Hemisphäre ist die Dura mater zu sehen. Auf der linken Hemisphäre ist die Pia mater zu sehen. Die Dura mater Arachnoidea wurde von dieser Hälfte inklusive Arachnoidea entfernt.}
+	\caption[Die Hirnhäute]{\textbf{Die Hirnhäute.} \textbf{A}: Anordnung der drei Hirnhäute als Schema. \textbf{B}: Veranschaulichung der Hirnhäute am Schafhirn. Über der linken Hemisphäre ist die Dura mater zu sehen. Auf der linken Hemisphäre ist die Pia mater zu sehen. Die Dura mater Arachnoidea wurde von dieser Hälfte inklusive Arachnoidea entfernt.\\
+	Abbildung~A aus \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[7]{neurowissenschaften_baer}}.}
 	\label{fig:hirnhaeute}
 \end{figure}
 
@@ -794,16 +813,15 @@ Das Riechepithelium befindet sich außerhalb des Gehirns und ist am rostralen En
 \label{subsubsec:hypophyse} \index{Hypophyse! allgemein}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Die Hypophyse liegt inferior, leicht caudal des Chiamsa opticums und rostral des Mammillarkörpers. Über den Hypophysenstiel (Infundibulum) hängt sie am Hypothalamus 
+Die Hypophyse liegt inferior, leicht caudal des Chiamsa opticums und rostral des Mammillarkörpers. Über den Hypophysenstiel (Infundibulum) hängt sie am Hypothalamus (Abb.~\ref{fig:hypophyse}) \textsuperscript{\cite[4]{trepel2011neuroanatomie}}. Die Hypophyse besteht aus zwei Teilgebieten, der Neurohypophyse\index{Hypophyse! Neurohypophyse} und der Adenohypophyse\index{Hypophyse! Adenohypophyse}. Dabei ist lediglich die \textbf{Neurohypophyse} (Hypophysenhinterlappen) Teil des Diencephalons. Die Neurohypophyse besitzt keine dichte Blut-Hirn-Schranke. Dadurch können Hormone, die von den dort lokalisierten Nervenzellen sezerniert werden, via Neurosekretion ins Blut gelangen. Die deutlich größere \textbf{Adenohypophyse} (Hypophysenvorderlappen) umhüllt den kleineren Hypophysenhinterlappen teilweise. Sie ist kein Bestandteil des Gehirns, sie ist lediglich an das Diencephalon angelagert. Somit besteht die Adenohypophyse nicht aus Nervengewebe, sondern aus Drüsenepithel. Durch die dort gebildeten glandotropen Hormone kann die Adenohypophyse auf endokrine Drüsen, wie die Schilddrüse oder die Nebennierenrinde, wirken. Diese Drüsen nehmen dann durch die Produktion eigener Hormone  Einfluss auf periphere Organe. Auch Effektorhormone werden in der Adenohypophyse gebildet. Diese können dirket, ohne Zwischenschaltung weiterer Drüsen, auf periphere Organe wirken. Die Hormone der Adenohypophyse sind unter anderem an der Pigmentierung der Haut, an der Milchbildung in der Brustdrüse, am Körperwachstum und an der Reifung von Ei- und Spermienzellen beteiligt. Generell ist die Hypophyse als das hormonelle 'Ausführungsorgan' des Hypothalamus\index{Hypothalamus} (Kap.~\ref{subsubsec:Hypothalamus}) zu betrachten  \textsuperscript{\cite[8]{trepel2011neuroanatomie}}.
 
-\begin{wrapfigure}{r}{0.38\textwidth}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.35\textwidth]{pictures/Bilder_Jule/Schaf/Aussenansicht/Hypophyse.png}
-    \caption[Hypophyse Schaf.]{\textbf{Hypophyse Schaf}}
+    \includegraphics[width=0.5\textwidth]{pictures/Bilder_Jule/Schaf/Aussenansicht/Hypophyse.png}
+    \caption[Hypophyse Schaf]{\textbf{Hypophyse Schaf}}
     \label{fig:hypophyse}
-\end{wrapfigure}
+\end{figure}
 
-\noindent (Abb.~\ref{fig:hypophyse}) \textsuperscript{\cite[4]{trepel2011neuroanatomie}}. Die Hypophyse besteht aus zwei Teilgebieten, der Neurohypophyse\index{Hypophyse! Neurohypophyse} und der Adenohypophyse\index{Hypophyse! Adenohypophyse}. Dabei ist lediglich die \textbf{Neurohypophyse} (Hypophysenhinterlappen) Teil des Diencephalons. Die Neurohypophyse besitzt keine dichte Blut-Hirn-Schranke. Dadurch können Hormone, die von den dort lokalisierten Nervenzellen sezerniert werden, via Neurosekretion ins Blut gelangen. Die deutlich größere \textbf{Adenohypophyse} (Hypophysenvorderlappen) umhüllt den kleineren Hypophysenhinterlappen teilweise. Sie ist kein Bestandteil des Gehirns, sie ist lediglich an das Diencephalon angelagert. Somit besteht die Adenohypophyse nicht aus Nervengewebe, sondern aus Drüsenepithel. Durch die dort gebildeten glandotropen Hormone kann die Adenohypophyse auf endokrine Drüsen, wie die Schilddrüse oder die Nebennierenrinde, wirken. Diese Drüsen nehmen dann durch die Produktion eigener Hormone  Einfluss auf periphere Organe. Auch Effektorhormone werden in der Adenohypophyse gebildet. Diese können dirket, ohne Zwischenschaltung weiterer Drüsen, auf periphere Organe wirken. Die Hormone der Adenohypophyse sind unter anderem an der Pigmentierung der Haut, an der Milchbildung in der Brustdrüse, am Körperwachstum und an der Reifung von Ei- und Spermienzellen beteiligt. Generell ist die Hypophyse als das hormonelle 'Ausführungsorgan' des Hypothalamus\index{Hypothalamus} (Kap.~\ref{subsubsec:Hypothalamus}) zu betrachten  \textsuperscript{\cite[8]{trepel2011neuroanatomie}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -823,7 +841,7 @@ In den folgenden Kapiteln wird am Beispiel der Ratte näher auf die unterschiedl
 
 % Somatosensorik
 \subsection{Somatosensorik \index{Sensorik! Somato-} des Körpers}
-Die Somatosensorik des Körpers wird in zwei Systeme unterteilt, wobei der Tastsinn \index{Tastsinn} und die Propriozeption das lemniskale System \index{System! lemniskal} bilden und der Schmerz- und Temperatursinn  das anterolaterales System. \index{System! anterolateral} Beide Systeme werden bei Säugern durch die Rezeptoren unter der haarlosen Haut innerviert \textcolor{red}{(QUELLE?)}.
+Die Somatosensorik des Körpers wird in zwei Systeme unterteilt, wobei der Tastsinn \index{Tastsinn} und die Propriozeption das lemniskale System \index{System! lemniskal} bilden und der Schmerz- und Temperatursinn  das anterolaterales System. \index{System! anterolateral} Beide Systeme werden bei Säugern durch die Rezeptoren unter der haarlosen Haut innerviert.
 
 \subsubsection{Tastsinn und Propriozeption (lemniskales System)} \label{subsubsec:tastsinn}
 
@@ -842,8 +860,9 @@ Die Trennung zwischen F.~gracilis und F.~cuneatus ist wichtig, da die sie in zwe
     \centering
     \includegraphics [width = \textwidth]
     {pictures/somatosensory/aufabsteigendeBahnen_Rueckenmark.png}
-    \caption[Auf- und Absteigende Bahnen im Rückenmark]{\textbf{Auf- und Absteigende Bahnen im Rückenmark}\\ Zur besseren Veranschaulichung der Bahnen sind die Bahnen in der Abbildung nach absteigenden Bahnen auf der linken Seite und absteigenden Bahnen auf der rechten Seite aufgeteilt. Beide Gruppen kommen jeweils gespiegelt auch auf der anderen Seite vor. Abbildung aus Neuroanatomy, Crossman
-    \textsuperscript{\cite[8]{crossman2014neuroanatomy}}}
+    \caption[Auf- und Absteigende Bahnen im Rückenmark]{\textbf{Auf- und Absteigende Bahnen im Rückenmark.} Zur besseren Veranschaulichung der Bahnen sind die Bahnen in der Abbildung nach absteigenden Bahnen auf der linken Seite und absteigenden Bahnen auf der rechten Seite aufgeteilt. Beide Gruppen kommen jeweils gespiegelt auch auf der anderen Seite vor. \\
+    Abbildung aus \textit{Neuroanatomy}, Crossman und Neary
+    \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:bahnen_rueckenmark}
 \end{figure}
 
@@ -857,8 +876,7 @@ Beide Nuclei sind zylindrisch geformt und in rostrocaudaler Richtung ausgedehnt.
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/somatosensory/nucleus_cuneatus.png}
-    \caption[Lage des \textit{Nucleus cuneatus} in der Medulla]{\textbf{Lage des \textit{Nucleus cuneatus} in der Medulla}\\
-    Nissl-Färbung der Rattenhirns auf der Höhe der Medulla (N02-3). Der Ausschnitt zeigt die rechte Seite vom Zentralkanal (cc) bis zum Trigeminusnerv (sp5). Oberhalb des Kerngebiets des Trigeminusnervs (SP5I) liegt der Nucleus~cuneatus (Cu). Die Schnittebene beinhaltet sowohl Teile der Medulla, daran zu erkennen, dass der vierter Ventrikel (4V) angeschnitten ist, als auch Teile des Rückenmarks, daran zu erkennen, dass der Zentralkanal (cc) zu sehen ist. Weitere Kerngebiete sind: der dorsale Kern des Nervus vagus (10), der Kern des Nervus hypoglossus (12), die untere Olive (IO) und der Nucleus reticularis lateralis (LRt). Ebenfalls zu sehen sind die Pyramidenbahn (py), der dorsaler spinocerebellarer Trakt/olivocerebraler Trakt (dsc/oc) und der Trigeminusnerv (sp5).}
+    \caption[Lage des Nucleus cuneatus in der Medulla]{\textbf{Lage des \textit{Nucleus cuneatus} in der Medulla.} Nissl-Färbung der Rattenhirns auf der Höhe der Medulla (N02-3). Der Ausschnitt zeigt die rechte Seite vom Zentralkanal (cc) bis zum Trigeminusnerv (sp5). Oberhalb des Kerngebiets des Trigeminusnervs (SP5I) liegt der Nucleus~cuneatus (Cu). Die Schnittebene beinhaltet sowohl Teile der Medulla, daran zu erkennen, dass der vierter Ventrikel (4V) angeschnitten ist, als auch Teile des Rückenmarks, daran zu erkennen, dass der Zentralkanal (cc) zu sehen ist. Weitere Kerngebiete sind: der dorsale Kern des Nervus vagus (10), der Kern des Nervus hypoglossus (12), die untere Olive (IO) und der Nucleus reticularis lateralis (LRt). Ebenfalls zu sehen sind die Pyramidenbahn (py), der dorsaler spinocerebellarer Trakt/olivocerebraler Trakt (dsc/oc) und der Trigeminusnerv (sp5).}
     \label{fig:nucleus_cuneatus}
 \end{figure}
 
@@ -867,8 +885,7 @@ Beide Nuclei sind zylindrisch geformt und in rostrocaudaler Richtung ausgedehnt.
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.85\textwidth] {pictures/somatosensory/medial_lemniscus.png}
-    \caption[Verlauf des \textit{medialen Lemniscus}]{\small{\textbf{Verlauf des \textit{medialen Lemniscus}}\\
-    Faserschnitte auf der Höhe des Mesencephalons (A \& B) und des Diencephalons (C). Man kann den Verlauf des medialen Lemniscus in der Schnittserie über 3450~$\upmu$m verfolgen.\\
+    \caption[Verlauf des medialen Lemniscus]{\small{\textbf{Verlauf des \textit{medialen Lemniscus.}} Faserschnitte auf der Höhe des Mesencephalons (A \& B) und des Diencephalons (C). Man kann den Verlauf des medialen Lemniscus in der Schnittserie über 3450~$\upmu$m verfolgen.\\
     \textbf{A} (F14-4): Colliculus superior (SC), Colliculus inferior (IC), Aquädukt (Aq), Brachium des IC (bic), brachia pontis (bp, engl.: middle cerebellar peduncle), Großhirnstiele (Pedunculi cerebri) (cp), dorsale tegmentale Dekussation (dtgx), Fasciculus longitudinalis medialis (mlf), rubrospinaler Trakt (rs), Dekussation des SC Pedunkels (xscp).
     \textbf{B} (F17-3): Nervus oculomotorius (3n), Hippocampus (Hi), Brachium des SC (bsc), Kommissur des SC (csc), Pedunculus mamillaris (mp).
     \textbf{C} (F20-3): dritter Ventrikel (3V), lateraler Ventrikel (LV), zentrale Kommissur (cc), Cingulum (cg), dorsale Hippocampuskommissur (dhc), Capsula externa (ec), externe medulläre Lamina (eml), Fornix (f), Fimbria (fi), Fasciculus retroflexus (fr), Commissura habenularum (hbc), Capsula interna (ic), mammillothalamischer Trakct (mt), optischer Trakt (op)}}
@@ -890,8 +907,7 @@ Die zweite synaptische Verschaltung im Thalamus gibt die Informationen an die Ne
     \centering
     \includegraphics[width = 0.8\textwidth]
     {pictures/somatosensory/thalamus_somato.png}
-    \caption[Thalamus im lemniskalen System]{\textbf{Thalamus im lemniskalen System}\\
-    Rechte Gehirnhälfte (N23-3) der Ratte auf der Höhe des Thalamus und des dritten Ventrikels (3V). Auf derselben Höhe sind als prominente Hirnstrukturen der Hippocampus (Hi), der Hypothalamus und die zentrale Kommissur (Corpus callosum, cc) zu sehen. Weitere Strukturen sind Cortex, Amygdala (Amy), Caudate Putamen (CPu), Cingulum (cg), äußere Kapsel (ec), Fornix (f), Fimbria (fi), innere Kapsel (ic), lateraler Ventrikel (LV), mammillothalamischer Trakt (mt), optische Bahn (opt).}
+    \caption[Thalamus im lemniskalen System]{\textbf{Thalamus im lemniskalen System.} Rechte Gehirnhälfte (N23-3) der Ratte auf der Höhe des Thalamus und des dritten Ventrikels (3V). Auf derselben Höhe sind als prominente Hirnstrukturen der Hippocampus (Hi), der Hypothalamus und die zentrale Kommissur (Corpus callosum, cc) zu sehen. Weitere Strukturen sind Cortex, Amygdala (Amy), Caudate Putamen (CPu), Cingulum (cg), äußere Kapsel (ec), Fornix (f), Fimbria (fi), innere Kapsel (ic), lateraler Ventrikel (LV), mammillothalamischer Trakt (mt), optische Bahn (opt).}
     \label{fig:thalamus_somato}
 \end{figure}
 
@@ -902,9 +918,7 @@ Der \textbf{somatosensorische Cortex} \index{Cortex! primär somatosensorisch} l
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/somatosensory/S1_Cortex.png}
-    \caption[Primärer Somatosensorischer Cortex]{\textbf{Primärer Somatosensorischer Cortex (S1)}\\
-    Der primäre somatosensorische Cortex (S1) setzt sich aus den Brodmann-Arealen 3a, 3b, 1 und 2 zusammen und endet anterior im Sulcus centralis (CS). Dort grenzt er an den primären Motorcortex (Brodmann-Areal 4). Posterior des S1 liegt der posteriore Parietalcortex mit den Brodmann-Arealen 5 und 7. Er grenzt sich vom postzentralen Gyrus durch den postzentralen Sulcus (PCS) ab. Abbildung aus Principles of Neural Systems, Kandel
-    \textsuperscript{\cite[23]{kandel2013principles}}}
+    \caption[Primärer Somatosensorischer Cortex]{\textbf{Primärer Somatosensorischer Cortex (S1).} Der primäre somatosensorische Cortex (S1) setzt sich aus den Brodmann-Arealen 3a, 3b, 1 und 2 zusammen und endet anterior im Sulcus centralis (CS). Dort grenzt er an den primären Motorcortex (Brodmann-Areal 4). Posterior des S1 liegt der posteriore Parietalcortex mit den Brodmann-Arealen 5 und 7. Er grenzt sich vom postzentralen Gyrus durch den postzentralen Sulcus (PCS) ab. Abbildung aus \textit{Principles of Neural Systems}, Kandel et al. \textsuperscript{\cite[23]{kandel2013principles}}.}
     \label{fig:S1_Cortex}
 \end{figure}
 
@@ -914,8 +928,7 @@ Betrachtet man den somatosensorischen Cortex in seiner Ausdehnung entlang des Su
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth] {pictures/somatosensory/homunculus.png}
-    \caption[Homunculus]{\textbf{Homunculus}\\
-    Homunculi des Affen, Menschen, Hasen und der Katze. Abbildung aus der Vorlesung Integrative Neurobiology: Somatosensory System, J. Ostwald (2018)}
+    \caption[Homunculus]{\textbf{Homunculus.} Homunculi des Affen, Menschen, Hasen und der Katze. Abbildung aus der Vorlesung \textit{Integrative Neurobiology: Somatosensory System}, J. Ostwald \textsuperscript{\cite{Ostwald}}.}
     \label{fig:somato_homunculus}
 \end{figure}
 
@@ -929,8 +942,7 @@ Im Gegensatz zu der Lage des somatosensorischen Cortex beim Menschen steht die L
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.8\textwidth] {pictures/somatosensory/Somato_cortex_ratte.png}
-    \caption[Somatosensorischer Cortex der Ratte]{\textbf{Somatosensorischer Cortex der Ratte}\\
-    primärer (S1) und sekundärer (S2) somatosensorischer Cortex mit der Repräsentation der einzelnen Körperregionen. Außerdem ist die \textit{Fissura rhinalis} (Rhinal sulcus) gezeigt, welche den Neocortex vom Archicortex trennt. Anterior vom somatosensorischen Cortex ist der Motorcortex mit primärem (M1) und sekundärem (M2) Motorcortex. Ventral des S2 liegt das parietale ventrale somatosensorische Areal (PV) und posterior das posteriore mediale Areal (PM). Als Reverenz sind noch der auditorische Cortex (Aud) und der visuelle Cortex (V1) gezeigt. Abbildung aus The Rat Nervous System, Paxinos \textsuperscript{\cite[24]{paxinos2014rat}}}
+    \caption[Somatosensorischer Cortex der Ratte]{\textbf{Somatosensorischer Cortex der Ratte.} Primärer (S1) und sekundärer (S2) somatosensorischer Cortex mit der Repräsentation der einzelnen Körperregionen. Außerdem ist die \textit{Fissura rhinalis} (Rhinal sulcus) gezeigt, welche den Neocortex vom Archicortex trennt. Anterior vom somatosensorischen Cortex ist der Motorcortex mit primärem (M1) und sekundärem (M2) Motorcortex. Ventral des S2 liegt das parietale ventrale somatosensorische Areal (PV) und posterior das posteriore mediale Areal (PM). Als Reverenz sind noch der auditorische Cortex (Aud) und der visuelle Cortex (V1) gezeigt. Abbildung aus \textit{The Rat Nervous System}, Paxinos et al. \textsuperscript{\cite[24]{paxinos2014rat}}.}
     \label{fig:S1_Cortex_Ratte}
 \end{figure}
 
@@ -939,9 +951,8 @@ Im Gegensatz zu der Lage des somatosensorischen Cortex beim Menschen steht die L
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/somatosensory/pathway_somatosensory2.png}
-    \caption[Aufsteigende Bahnen der Somatosensorik]{\textbf{Aufsteigende Bahnen der Somatosensorik}\\
-    Die aufsteigenden Bahnen der Somatosensorik sind getrennt in das lemniskale (rot) und das anterolaterale (braun) System. Beginnend im Rückenmark bis hin zum primären somatosensorischen Cortex posterior vom \textit{Sulcus centralis}. Die Bahnen sind am Beispiel des Menschen schematisch dargestellt und sind auf den Ebenen des Rückenmarks, der Medulla, der Pons, des Mittelhirns und des Cortex zu verfolgen.
-    Abbildung aus Principles of Neural Science, Kandel \textsuperscript{\cite[22]{kandel2013principles}}}
+    \caption[Aufsteigende Bahnen der Somatosensorik]{\textbf{Aufsteigende Bahnen der Somatosensorik.} Die aufsteigenden Bahnen der Somatosensorik sind getrennt in das lemniskale (rot) und das anterolaterale (braun) System. Beginnend im Rückenmark bis hin zum primären somatosensorischen Cortex posterior vom \textit{Sulcus centralis}. Die Bahnen sind am Beispiel des Menschen schematisch dargestellt und sind auf den Ebenen des Rückenmarks, der Medulla, der Pons, des Mittelhirns und des Cortex zu verfolgen.\\
+    Abbildung aus \textit{Principles of Neural Science}, Kandel et al. \textsuperscript{\cite[22]{kandel2013principles}}.}
     \label{fig:somato_pathway}
 \end{figure}
 
@@ -954,15 +965,13 @@ Der Schmerz- und Temperatursinn \index{Schmerzsinn} \index{Temperatursinn} hat v
 \subsubsection*{Rückenmark}
 
 Die meisten der Nozizeptoren \index{Nozizeptoren} sind einfache Nervenendigungen primärer sensorischer Faser und können generell in drei Gruppen eingeteilt werden, die thermischen, mechanischen und polymodalen Nozizeptoren \textsuperscript{\cite[24]{kandel2013principles}}. Auch die Zellkörper der Nozizeptoren des Körpers liegen im dorsalen Wurzelganglion und terminieren im Hinterhorn des jeweiligen Segments. Ihre Synapsen konzentrieren sich in den Schichten I, IV, V, VII, und X des Hinterhorns (Abb.~\ref{fig:graymatter}) \textsuperscript{\cite[25]{paxinos2014rat}}.
-\\
-\\
 
 \begin{figure}[H]
         \centering
         \includegraphics[width = 0.5\textwidth]
         {pictures/somatosensory/gray_matter.png}
-        \caption[Schichten in der grauen Substanz des Rückenmarks]{\textbf{Schichten in der grauen Substanz des Rückenmarks} Die Abbildung zeigt schematisch die rechte Seite des Rückenmarks mit weißer und grauer Substanz. Die Schichten der grauen Substanz beginnen im Hinterhorn mit Schicht I und gehen bis Schicht VIII im Vorderhirn. Die Schicht XI liegt in Schicht VIII. Schicht X umgibt den Zentralkanal. Abbildung nach Neuroanatomy, Crossman
-        \textsuperscript{\cite[8]{crossman2014neuroanatomy}}}
+        \caption[Schichten in der grauen Substanz des Rückenmarks]{\textbf{Schichten in der grauen Substanz des Rückenmarks.} Die Abbildung zeigt schematisch die rechte Seite des Rückenmarks mit weißer und grauer Substanz. Die Schichten der grauen Substanz beginnen im Hinterhorn mit Schicht I und gehen bis Schicht VIII im Vorderhirn. Die Schicht XI liegt in Schicht VIII. Schicht X umgibt den Zentralkanal. Abbildung nach \textit{Neuroanatomy}, Crossman und Neary
+        \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
         \label{fig:graymatter}
     \end{figure}
 
@@ -1016,8 +1025,8 @@ Hinzu kommen Informationen aus dem Nervus facialis (CN~VII),\index{Hirnnerven! 0
     \centering
     \includegraphics[width = \textwidth]
     {pictures/somatosensory/somato_kopf.png}
-    \caption[Nucleus spinalis und Nucleus principalis des Trigeminus]{\textbf{Nucleus spinalis und Nucleus principalis des Trigeminus}\\
-     \textbf{A} (N06-4): Der Nucleus spinalis oralis (Sp5O) liegt in der Medulla, lateral auf der Höhe des Nucleus cochlearis (Co) und doral des Nucleus facialis (7). Des weiteren sieht man den spinalen Trigeminus (sp5) lateral dieses Nucleus. Weitere Strukturen sind der vierte Ventrikel (4V), das inferiore cerebellare Pedunkel (icp), die Pyramidenbahn (py) und der Trapezkörper (tz).
+    \caption[Nucleus spinalis und Nucleus principalis des Trigeminus]{\textbf{Nucleus spinalis und Nucleus principalis des Trigeminus.}\\
+     \textbf{A}~(N06-4): Der Nucleus spinalis oralis (Sp5O) liegt in der Medulla, lateral auf der Höhe des Nucleus cochlearis (Co) und doral des Nucleus facialis (7). Des weiteren sieht man den spinalen Trigeminus (sp5) lateral dieses Nucleus. Weitere Strukturen sind der vierte Ventrikel (4V), das inferiore cerebellare Pedunkel (icp), die Pyramidenbahn (py) und der Trapezkörper (tz).
      \textbf{B} (N09-3): Der Nucleus principalis (Pr5) des Trigeminus liegt im Mesencephalon lateral-dorsal auf Höhe der inferioren Olive (IO). Die Axone zum diesem Nucleus liegen im Trigeminus (s5). Weitere Strukturen sind der Nucleus cochlearis (Co), der Nucleus mesencephalicus des Trigeminus (Me5), der Nucleus motorius des Trigeminus (Mo5),  die Pyramidenbahn (py), der rubrospinale Trakt (rs) und der Trapezkörper (tz).}
     \label{fig:somato_Pr5}
 \end{figure}
@@ -1032,9 +1041,8 @@ Wie schon in Kapitel \ref{subsubsec:S1} beschrieben, ist S1 für die Verarbeitun
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth] {pictures/somatosensory/barrelcortex.png}
-    \caption[Barrelcortex]{\textbf{Barrelcortex}\\
-    \textbf{A}: Die Lage der Vibrissen am Beispiel einer Maus. \textbf{B}: schematische Darstellung des primären somatosensorischen Cortex (S1) mit der Lage der 'Barrel' (engl. für Tonne, nach dem Aussehen der einzelnen cortikalen Areale jeder Vibrisse) in S1. Die 'Barrel' sind analog zur Lage der Vibrissen zueinander angeordnet. \textbf{C}: Barrelregion innerhalb von S1. Der Schnitt durch die 'Barrel' ist horizontal zum Cortex angelegt und mit Hilfe einer Nissl-Färbung angefärbt. Die Abbildung unten rechts zeigt erneut die Anordnung der Barrel in fünf Reihen, wie auch in \textbf{A} zusehen ist. Abbildung aus Aronoff (2008)
-    \textsuperscript{\cite{barrelcortex2008}}}
+    \caption[Barrelcortex]{\textbf{Barrelcortex.} \textbf{A}: Die Lage der Vibrissen am Beispiel einer Maus. \textbf{B}: schematische Darstellung des primären somatosensorischen Cortex (S1) mit der Lage der 'Barrel' (engl. für Tonne, nach dem Aussehen der einzelnen cortikalen Areale jeder Vibrisse) in S1. Die 'Barrel' sind analog zur Lage der Vibrissen zueinander angeordnet. \textbf{C}: Barrelregion innerhalb von S1. Der Schnitt durch die 'Barrel' ist horizontal zum Cortex angelegt und mit Hilfe einer Nissl-Färbung angefärbt. Die Abbildung unten rechts zeigt erneut die Anordnung der Barrel in fünf Reihen, wie auch in \textbf{A} zusehen ist. \\
+    Abbildung aus Aronoff und Petersen, 2008 \textsuperscript{\cite{barrelcortex2008}}.}
     \label{fig:barrelcortex}
 \end{figure}
 
@@ -1062,8 +1070,7 @@ Innere Haarzellen haben keinen efferenten Eingang von höheren Hirnstrukturen. A
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/auditory/hoerbahn_pathway.png}
-    \caption[Hörbahn]{\textbf{Hörbahn} \\
-    Die einzelnen Stationen der Hörbahn des Menschen von den Spiralganglionzellen in der Cochlea bis zum primären auditorischen Cortex anhand skizzierter Gehirnschnitte. Abbildung nach Principles of Neural Science, Kandel \textsuperscript{\cite[30]{kandel2013principles}}}
+    \caption[Hörbahn]{\textbf{Hörbahn.} Die einzelnen Stationen der Hörbahn des Menschen von den Spiralganglionzellen in der Cochlea bis zum primären auditorischen Cortex anhand skizzierter Gehirnschnitte. Abbildung nach \textit{Principles of Neural Science}, Kandel et al. \textsuperscript{\cite[30]{kandel2013principles}}.}
     \label{fig:hoerbahn_pathway}
 \end{figure}
 
@@ -1079,8 +1086,8 @@ Die afferenten Ganglionzellen aus dem Hörnerv ziehen auf der Höhe der Medulla 
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth]{pictures/auditory/CN.png}
-    \caption[Nucleus cochlearis]{\textbf{Nucleus cochlearis}\\
-    \textbf{A}: Nissl-Färbung (N09-1) der rechten Seite der Medulla. Es sind der anteroventrale Nucleus cochlearis (AVCN), der Trigeminus (s5), der Trapezkörper (tz) und der achte Hirnnerv (8n, Hörnerv) zu sehen. \textbf{B}: Verlauf der Nervenfasern aus dem achten Hirnnerv (CN VIII, 8n) im ventralen Nucleus cochlearis. Sowohl im anteroventralen (AVCN) als auch im posteroventralen (PVCN) Bereich des CNs werden die Fasern nach der Frequenz tonotopisch geordnet, von den tiefen Frequenzen (rot) ventral bis zu den hohen Frequenzen (gelb) im dorsalen Bereich. Abbildung B verändert, nach Kandel \textsuperscript{\cite[31]{kandel2013principles}}}
+    \caption[Nucleus cochlearis]{\textbf{Nucleus cochlearis.} \textbf{A}: Nissl-Färbung (N09-1) der rechten Seite der Medulla. Es sind der anteroventrale Nucleus cochlearis (AVCN), der Trigeminus (s5), der Trapezkörper (tz) und der achte Hirnnerv (8n, Hörnerv) zu sehen. \textbf{B}: Verlauf der Nervenfasern aus dem achten Hirnnerv (CN VIII, 8n) im ventralen Nucleus cochlearis. Sowohl im anteroventralen (AVCN) als auch im posteroventralen (PVCN) Bereich des CNs werden die Fasern nach der Frequenz tonotopisch geordnet, von den tiefen Frequenzen (rot) ventral bis zu den hohen Frequenzen (gelb) im dorsalen Bereich. \\
+    Abbildung B nach \textit{Principles of Neural Science}, Kandel et al. \textsuperscript{\cite[31]{kandel2013principles}}, abgeändert.}
     \label{fig:Nucleus_cochlearis}
 \end{figure}
 
@@ -1111,8 +1118,7 @@ Die Axone der MSO projizieren in den \textbf{dorsalen Nucleus des lateralen Lemn
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/auditory/obere_olive.png}
-    \caption[Obere Olive]{\textbf{Obere Olive}\\
-    Nissl-Färbung (N10-1) der oberen Olive des Pons. Mit den drei Hauptkernen: Der mediale obere Olive (MSO), der lateralen oberen Olive (LSO) und dem medialen Nucleus des Trapezkörpers (MNTB), sowie dem für Nager speziellen oberen paraoliven Nucleus (SPO). Des Weiteren liegen in der oberen Olive das Kerngebiet des lateralen Nucleus des Trapezkörpers (LTz) und der Trapezkörper (tz) selbst. Letzterer verbindet die oberen Oliven beider Hemisphären miteinander und befindet sich ventral des Komplex der oberen Olive.}
+    \caption[Obere Olive]{\textbf{Obere Olive.} Nissl-Färbung (N10-1) der oberen Olive des Pons. Mit den drei Hauptkernen: Der mediale obere Olive (MSO), der lateralen oberen Olive (LSO) und dem medialen Nucleus des Trapezkörpers (MNTB), sowie dem für Nager speziellen oberen paraoliven Nucleus (SPO). Des Weiteren liegen in der oberen Olive das Kerngebiet des lateralen Nucleus des Trapezkörpers (LTz) und der Trapezkörper (tz) selbst. Letzterer verbindet die oberen Oliven beider Hemisphären miteinander und befindet sich ventral des Komplex der oberen Olive.}
     \label{fig:obere_Olive}
 \end{figure}
 
@@ -1145,8 +1151,7 @@ Der DLL projiziert über den lateralen Lemniscus in beide Colliculi inferior (IC
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth]{pictures/auditory/lateral_lemniscus.png}
-    \caption[Der Lateraler Lemniscus und seine Kerne]{\textbf{Der Lateraler Lemniscus und seine Kerne}\\ 
-    Verlauf des lateralen Lemniscus und die Lage seiner Kerne in der Nissl-Färbung (N11-4) und der Faser-Färbung (F13-4). Die Schnittebenen sind 1200~$\upmu$m auseinander.\\
+    \caption[Der Lateraler Lemniscus und seine Kerne]{\textbf{Der Lateraler Lemniscus und seine Kerne.} Verlauf des lateralen Lemniscus und die Lage seiner Kerne in der Nissl-Färbung (N11-4) und der Faser-Färbung (F13-4). Die Schnittebenen sind 1200~$\upmu$m auseinander.\\
     \textbf{A}: Nissl-Färbung (N11-4) auf der Höhe des Pons, erkennbar am vierten Ventrikel (4V).
     Der laterale Lemniscus verbindet die obere Olive (SO) mit dem Colliculus inferior (IC). Einige der Verbindungen sind über den dorsalen (DLL) oder den ventralen (VLL) Nucleus des lateralen Lemniscus zwischen geschaltet. 
     Des Weiteren sind der Trigeminus (s5) und der Nucleus des mesencephalischen Trakts des Trigeminus (Me5) aus der Somatosensorik, sowie der motorische Nucleus des Trigeminus (Mo5) aus der Motorik zu sehen. 
@@ -1164,8 +1169,7 @@ Der IC integriert nahezu die gesamt Information aus den tiefer liegenden auditor
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/auditory/MG.png}
-    \caption[Corpus geniculatum mediale]{\textbf{Corpus geniculatum mediale}\\
-    Das Corpus geniculatum mediale (MGN) liegt im Mesencephalon lateral-ventral des Colliculus superior (SC). Das Aquädukt (Aq) wird vom zentralen Höhlengrau (CG) umgeben und unterhalb liegt der Nucleus ruber (R), welcher ebenfalls im Mesencephalon liegen. Der Cortex liegt um das Mesencephalon herum. Dazu zählen der Archicortex (AHi) der Cortex entorhinalis (Ent), Forceps major des Corpus callosum (fmj) un der Hippocampus (Hi). Nissl-Färbung (N16-3)}
+    \caption[Corpus geniculatum mediale]{\textbf{Corpus geniculatum mediale.} Das Corpus geniculatum mediale (MGN) liegt im Mesencephalon lateral-ventral des Colliculus superior (SC). Das Aquädukt (Aq) wird vom zentralen Höhlengrau (CG) umgeben und unterhalb liegt der Nucleus ruber (R), welcher ebenfalls im Mesencephalon liegen. Der Cortex liegt um das Mesencephalon herum. Dazu zählen der Archicortex (AHi) der Cortex entorhinalis (Ent), Forceps major des Corpus callosum (fmj) un der Hippocampus (Hi). Nissl-Färbung (N16-3)}
     \label{fig:MG}
 \end{figure}
 
@@ -1194,9 +1198,8 @@ Das Wernicke-Areal ist über den \textbf{Fasciculus arcuatus} \index{Fasciculus!
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{pictures/auditory/Wernicke.png}
-    \caption[Wernicke-Areal]{\textbf{Wernicke-Areal}\\ 
-    Wernicke-Areal und Broca-Areal auf der dominanten (linken) Hemisphäre. Die Verbindung der Beiden Areale (Fasciculus arcuatus) ist nicht abgebildet, verläuft aber um den Sulcus lateralis herum.
-    Abbildung veränder nach \url{https://www.nidcd.nih.gov/health/aphasia}}
+    \caption[Wernicke-Areal]{\textbf{Wernicke-Areal.} Wernicke-Areal und Broca-Areal auf der dominanten (linken) Hemisphäre. Die Verbindung der Beiden Areale (Fasciculus arcuatus) ist nicht abgebildet, verläuft aber um den Sulcus lateralis herum.\\
+    Abbildung verändert, nach \url{https://www.nidcd.nih.gov/health/aphasia}.}
     \label{fig:Wernicke}
 \end{figure}
 
@@ -1220,9 +1223,8 @@ Bei der Entwicklung des Embryos, nach der Einstülpung zum Neuralrohr, entwickel
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/visual/Eye_Neurulation.png}
-    \caption[Embryonale Entwicklung des Auges]{\textbf{Embryonale Entwicklung des Auges}\\
-    \textbf{A}: Neurula mit Neuroektodermzellen (n). \textbf{B}: Blastula mit ausgebildeter Neuralplatte. \textbf{C}: Einstülpung zum Neuralrohr. \textbf{D}: Entwicklung des optischen Vesikels (ov) aus dem Diencephalon. \textbf{E}: Migration der Ektodermzellen ins Mesoderm für die Bildung der Linse (Linsenplakode, lp). \textbf{F}: Bildung der Augenbrube und Einstülpung der Linsenplakode. \textbf{G}: Linse (l) und Photorezeptoren (r) auf der abgewandten Seite des Lichts.\\
-    Abbildung nach Biology of Sensory System, Smith \textsuperscript{\cite[16]{smith2008biology}}}
+    \caption[Embryonale Entwicklung des Auges]{\textbf{Embryonale Entwicklung des Auges.} \textbf{A}: Neurula mit Neuroektodermzellen (n). \textbf{B}: Blastula mit ausgebildeter Neuralplatte. \textbf{C}: Einstülpung zum Neuralrohr. \textbf{D}: Entwicklung des optischen Vesikels (ov) aus dem Diencephalon. \textbf{E}: Migration der Ektodermzellen ins Mesoderm für die Bildung der Linse (Linsenplakode, lp). \textbf{F}: Bildung der Augengrube und Einstülpung der Linsenplakode. \textbf{G}: Linse (l) und Photorezeptoren (r) auf der abgewandten Seite des Lichts.\\
+    Abbildung nach \textit{Biology of Sensory Systems}, Smith \textsuperscript{\cite[16]{smith2008biology}}.}
     \label{fig:eye_neurulation}
 \end{figure}
 
@@ -1233,18 +1235,15 @@ Bei der Entwicklung des Embryos, nach der Einstülpung zum Neuralrohr, entwickel
 
 Die Retina ist in laminaren Schichten aufgebaut (Abb.~\ref{fig:retina}).
 Wie schon im vorhergehenden Abschnitt erwähnt, ist die Retina invers zum einfallenden Licht aufgebaut. Dies stellt kein Problem dar, da die Netzhautzellen (Ganglienzellen, Bipolarzellen, Amakrinzellen und Horizontalzellen) relativ transparent sind. Das Licht trifft zuerst auf die Schicht der \textbf{Ganglienzellen}. \index{Ganglienzellen} Deren Aufgabe ist die Signaltransduktion aus der Retina ins Gehirn. Es können beim Menschen drei verschiedenen Ganglionzellen, anhand ihrer Funktion und Kodierung, unterschieden werden. Es gibt die \textbf{P-Ganglienzellen} \index{Ganglienzellen! P-Ganglienzellen} ('parvus', klein), die \textbf{M-Ganglienzellen} \index{Ganglienzellen! M-Ganglienzellen} ('magnus', groß) und die nonM-nonP-Ganglienzellen. 
-M-Zellen haben die Eigenschaft auf Reizung tonisch zu antworten und sind empfindlicher gegenüber schwachen Lichtreizen. Außerdem besitzen sie größere rezeptive Felder. Die Antworteigenschaften von P-Zellen sind phasisch. Sie reagieren nur auf bestimmte Wellenlängen des Lichts. 
-
-In der nächsten Schicht (innere plexiforme Schicht) liegen die synaptischen Verbindungen zwischen den Ganglienzellen und den \textbf{Biploarzellen} \index{Bipolarzellen} und den \textbf{Amakrinzellen}. \index{Amakrinzellen} Letztere beiden haben ihre Zellkörper in der inneren Körnerschicht. In der inneren Körnerschicht liegen auch die Zellkörper der \textbf{Horizontalzellen}. \index{Horizontalzellen} In der nächsten Schicht sind die Horizontalzellen mit den Bipolarzellen und den Photorezeptorzellen verbunden. Die Zellkerne der \textbf{Photorezeptorzellen} \index{Photorezeptorzellen} liegen in der äußeren Körnerschicht. Die Außensegmente der Photorezeptorzellen sind die eigentliche photorezeptiven Struktur der Photorezeptoren, die das eintreffende Licht verarbeiten. Die Enden der Außensegmente sind im \textbf{Pigmentepithel} \index{Pigmentepithel} eingebettet. Dieses hat die Aufgabe der Erneuerung der Photorezeptoren, sowie der Photopigmente. Des Weiteren absorbieren die Pigmentepithelzellen sämtliches Licht, das die Netzhaut durchdringt. Dadurch wird die Streuung auf ein Minimum reduziert und somit die Schärfe des Bilds erhöht \textsuperscript{\cite[10]{neurowissenschaften_baer}}.
+M-Zellen haben die Eigenschaft auf Reizung tonisch zu antworten und sind empfindlicher gegenüber schwachen Lichtreizen. Außerdem besitzen sie größere rezeptive Felder. Die Antworteigenschaften von P-Zellen sind phasisch. Sie reagieren nur auf bestimmte Wellenlängen des Lichts. In der nächsten Schicht (innere plexiforme Schicht) liegen die synaptischen Verbindungen zwischen den Ganglienzellen und den \textbf{Biploarzellen} \index{Bipolarzellen} und den \textbf{Amakrinzellen}. \index{Amakrinzellen} Letztere beiden haben ihre Zellkörper in der inneren Körnerschicht. In der inneren Körnerschicht liegen auch die Zellkörper der \textbf{Horizontalzellen}. \index{Horizontalzellen} In der nächsten Schicht sind die Horizontalzellen mit den Bipolarzellen und den Photorezeptorzellen verbunden. Die Zellkerne der \textbf{Photorezeptorzellen} \index{Photorezeptorzellen} liegen in der äußeren Körnerschicht. Die Außensegmente der Photorezeptorzellen sind die eigentliche photorezeptiven Struktur der Photorezeptoren, die das eintreffende Licht verarbeiten. Die Enden der Außensegmente sind im \textbf{Pigmentepithel} \index{Pigmentepithel} eingebettet. Dieses hat die Aufgabe der Erneuerung der Photorezeptoren, sowie der Photopigmente. Des Weiteren absorbieren die Pigmentepithelzellen sämtliches Licht, das die Netzhaut durchdringt. Dadurch wird die Streuung auf ein Minimum reduziert und somit die Schärfe des Bilds erhöht \textsuperscript{\cite[10]{neurowissenschaften_baer}}.
 \\
 \\
 \noindent Die Photorezeptoren werden in \textbf{Stäbchen} \index{Stäbchen} und \textbf{Zäpfchen} \index{Zäpfchen} unterschieden. Die Stäbchen ermöglichen, aufgrund ihrer niedrigen Toleranzschwelle, ein Hell-Dunkel-Sehen. Bei den Zäpfchen unterscheidet man zwischen den blau-sensitiven, grün-sensitiven und rot-sensitiven Zäpfchen. Die Unterscheidung erfolgt anhand des Absorbtionsspektrums der einzelnen Zäpfchen. Die Verteilung der Stäbchen und Zäpfchens über die Retina ist nicht konstant. Im Randbereich der Retina sind mehr Stäbchen vorhanden, während es zur \textbf{Fovea} \index{Fovea} hin weniger werden. Die Fovea selbst ist der Bereich der Retina, in dem es keine Stäbchen gibt, sondern nur Zäpfchen. Außerdem sind im Bereich der Fovea auch die anderen Zellschichten zur Seite verdrängt. Sie ist der Bereich mit dem schärfsten Sehens \textsuperscript{\cite[10]{neurowissenschaften_baer}}.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.8\textwidth]{pictures/visual/retina.png}
-    \caption[Schichten in der Retina]{\textbf{Schichten in der Retina}\\
-    Das Licht geht von oben durch die einzelnen Schichten, bis es von den Photopigmenten der Photorezeptoren absorbiert wird. Abbildung nach Neurowissenschaften, Baer \textsuperscript{\cite[10]{neurowissenschaften_baer}}}
+    \caption[Schichten in der Retina]{\textbf{Schichten in der Retina.} Das Licht geht von oben durch die einzelnen Schichten, bis es von den Photopigmenten der Photorezeptoren absorbiert wird. \\
+    Abbildung nach \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[10]{neurowissenschaften_baer}}.}
     \label{fig:retina}
 \end{figure}
 
@@ -1254,7 +1253,8 @@ Wie bereits kurz erwähnt, nehmen die Photorezeptoren das Licht wahr und wandeln
 \subsubsection*{Das Optische Chiasma und der Optische Trakt}
 
 Der linke und rechte Sehnerv ziehen über den optischen Kanal in die Schädelhöhle. An der Basis des Gehirns, unterhalb des \textit{Tuber cinereum} des Hypothalamus, laufen die beiden Sehnerven zum \textbf{Chiasma opticum} \index{Chiasma opticum} zusammen. 
-Im Chiasma opticum kreuzen die Nerven aus dem nasalen Bereich des Gesichtsfelds auf die jeweils andere Seite. Da nur ein Teil der Nerven auf die andere Seite kreuzt, wird diese Kreuzung \textbf{Semidecussation} \index{Semidecussation} genannt \textsuperscript{\cite[15]{crossman2014neuroanatomy}}. \textcolor{red}{du redest oben und unten über die kreuzung im chiasma, nimm das doch zusammen, dann steht es nur einmal da. du endest hier mit dem Trakt, redest ganz unten unter dem bild dann wieder kurz über das chiasma und dann wieder über den trakt}
+Im Chiasma opticum kreuzen die Nerven aus dem nasalen Bereich des Gesichtsfelds auf die jeweils andere Seite. Im Chiasma opticum (Abb.~\ref{fig:optic_tract}~A) findet keine Verschaltung statt. Die Nervenbahnen kreuzen nur auf die andere Seite.
+Da nur ein Teil der Nerven auf die andere Seite kreuzt, wird diese Kreuzung \textbf{Semidekussation} \index{Semidekussation} genannt \textsuperscript{\cite[15]{crossman2014neuroanatomy}}. 
 
 In Abbildung~\ref{fig:sehbahn_baer} ist die Sehbahn des Menschen abgebildet. Aufgrund der frontalen Augen des Menschen überlappen die beiden Sehfelder stark. Da Ratten lateral liegende Augen besitzen, ist bei ihnen eine bessere Rundumsicht möglich, jedoch ist das binokulare Gesichtsfeld kleiner (40~-~60\% Überlappung) \textsuperscript{\cite[30]{paxinos2014rat}}.
 Alles was auf der linken Gesichtsfeldhälfte abgebildet wird, wird auf der rechten Retinahälfte abgebildet und umgekehrt. Der linke und rechte Sehnerv, tragen jeweils die Informationen des gesamten Sehfeldes eines Auges bis zum Chiasma opticum. Dort kreuzen die Nerven aus dem nasalen Bereich der Retina auf die andere Seite. Danach verlaufen der linke und rechte Tractus opticus, \index{Tractus! opticus} diese tragen dann nur noch die Informationen aus einer Gesichtsfeldhälfte (rechter Tractus - linke Gesichtsfeldhälfte und umgekehrt) bis ins Gehirn \textsuperscript{\cite[15]{crossman2014neuroanatomy}}.
@@ -1262,19 +1262,17 @@ Alles was auf der linken Gesichtsfeldhälfte abgebildet wird, wird auf der recht
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.9\textwidth]{pictures/visual/Sehbahn.png}
-    \caption[Die Sehbahn]{\textbf{Die Sehbahn}\\
-    Die Sehbahn des Menschen mit dem Verlauf der Nervenbahnen und der Projektionsbahnen der linken und rechten Gesichtsfeldhälfte.
-    Abbildung nach Neurowissenschaften, Bear \textsuperscript{\cite[10]{neurowissenschaften_baer}}}
+    \caption[Die Sehbahn]{\textbf{Die Sehbahn.} Die Sehbahn des Menschen mit dem Verlauf der Nervenbahnen und der Projektionsbahnen der linken und rechten Gesichtsfeldhälfte.\\
+    Abbildung nach \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[10]{neurowissenschaften_baer}}.}
     \label{fig:sehbahn_baer}
 \end{figure}
 
-Im Chiasma opticum (Abb.~\ref{fig:optic_tract}~A) findet keine Verschaltung statt. Die Nervenbahnen kreuzen nur auf die andere Seite. Von da an werden die Sehbahnen, linker und rechter \textbf{Tractus opticus} \index{Tractus! opticus} genannt. Der optische Trakt verläuft auf beiden Hemisphären um den \textit{Pedunculus cerebri} herum bis in den Nucleus geniculatum lateralis im Thalamus (Abb.~\ref{fig:optic_tract}~B~-~E). \textsuperscript{\cite[15]{crossman2014neuroanatomy}}
+Der optische Trakt verläuft auf beiden Hemisphären um den \textit{Pedunculus cerebri} herum bis in den Nucleus geniculatum lateralis im Thalamus (Abb.~\ref{fig:optic_tract}~B~-~E). \textsuperscript{\cite[15]{crossman2014neuroanatomy}}
 
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/visual/optic_tract.png}
-    \caption[Das Optische Chiasma und der Optische Trakt]{\textbf{Das Optische Chiasma und der Optische Trakt}\\
-    Der Verlauf des optischen Trakts vom optischen Chiasma bis zum Thalamus. \textbf{A}: F18-3, \textbf{B}: F20-3, \textbf{C}: F21-3, \textbf{D}: F23-3, \textbf{E}: F26-2.}
+    \caption[Das Optische Chiasma und der Optische Trakt]{\textbf{Das Optische Chiasma und der Optische Trakt.} Der Verlauf des optischen Trakts vom optischen Chiasma bis zum Thalamus. \textbf{A}:~F18-3, \textbf{B}:~F20-3, \textbf{C}:~F21-3, \textbf{D}:~F23-3, \textbf{E}:~F26-2.}
     \label{fig:optic_tract}
 \end{figure}
 
@@ -1322,8 +1320,7 @@ Der \textbf{Corpus geniculatum laterale} (\textbf{LGN}) \index{Corpus! geniculat
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/visual/LGN.png}
-    \caption[Corpus geniculatum laterale]{\textbf{Corpus geniculatum laterale}\\
-    Nissl-Färbung (N20-4) auf der Höhe des Diencephalons und des Cortex. Der Corpus geniculatum laterale (LGN) befindet sich auf der lateralen Seite im Thalamus. Die eingehenden Informationen kommen aus dem optischen Trakt (opt) der lateral, am Pedunculus cerebri (cp, Kleinhirn-Pedunkel) vorbei, in den LGN zieht. Im Schnitt auf derselben Höhe liegen prominente Strukturen, wie Teile des Hippocampus (Hi) und der (mediale) Nucleus habenulares (MHb). Des Weiteren sind in diesem Schnitt folgende Strukturen zu sehen: 
+    \caption[Corpus geniculatum laterale]{\textbf{Corpus geniculatum laterale.} Nissl-Färbung (N20-4) auf der Höhe des Diencephalons und des Cortex. Der Corpus geniculatum laterale (LGN) befindet sich auf der lateralen Seite im Thalamus. Die eingehenden Informationen kommen aus dem optischen Trakt (opt) der lateral, am Pedunculus cerebri (cp, Kleinhirn-Pedunkel) vorbei, in den LGN zieht. Im Schnitt auf derselben Höhe liegen prominente Strukturen, wie Teile des Hippocampus (Hi) und der (mediale) Nucleus habenulares (MHb). Des Weiteren sind in diesem Schnitt folgende Strukturen zu sehen: 
     dritter Ventrikel (3V), Archicortex (AHi), Amygdala (Amy), Nucleus arcuatus hypothalami (Arc), Ammon's Horn (CA3), Corpus callosum (cc), Cingulum (cg), dorsale Hippocampus-Kommissur (dhc), Fasciculus retroflexus (fr), lateraler Ventrikel (LV), medialer Lemniscus (ml), Nucleus parafascicularis (PF),  primärer  olfaktorischer  Cortex (PO), Fissura rhinalis (RF), Nucleus subthalamicus (STh), Radiatio thalami superior (str).}
     \label{fig:LGN}
 \end{figure}
@@ -1335,9 +1332,7 @@ Zwischen den Schichten liegen die Schichten der konizellulären LGN-Zellen. Sie 
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/visual/LGN_baer.png}
-    \caption[Schichtung des LGN]{\textbf{Schichtung des LGN}\\
-    Die sechs Schichten des Corpus geniculatum laterale des Menschen. Schicht~1 und~2 bekommen Input aus den M-Ganglienzellen, Schicht~3 bis~6 aus den P-Ganglionzellen und die Schichten dazwischen aus den nonM-nonP-Ganglienzellen. Die Zellen des LGN in den zwischen Schichten werden konikuläre Zellen (K1~-~K6) genannt.\\
-    Abbildung nach Neurowissenschaften, Baer \textsuperscript{\cite[10]{neurowissenschaften_baer}}}
+    \caption[Schichtung des LGN]{\textbf{Schichtung des LGN.} Die sechs Schichten des Corpus geniculatum laterale des Menschen. Schicht~1 und~2 bekommen Input aus den M-Ganglienzellen, Schicht~3 bis~6 aus den P-Ganglionzellen und die Schichten dazwischen aus den nonM-nonP-Ganglienzellen. Die Zellen des LGN in den zwischen Schichten werden konikuläre Zellen (K1~-~K6) genannt. Abbildung nach \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[10]{neurowissenschaften_baer}}.}
     \label{fig:schichtung-LGN}
 \end{figure} 
 
@@ -1373,9 +1368,8 @@ In den Schichten~2 und~3 verlaufen auch noch sogenannte Cytochromoxidase-Blobs. 
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{pictures/visual/V1.png}
-    \caption[Der primäre visuelle Cortex]{\textbf{Der primäre visuelle Cortex}\\
-    Die Abbildung des Sehfeldes auf dem primären visuellen Cortex. Das Sehfeld kann in vier Quadranten eingeteilt werden. Der erste und zweite Quadrant (linkes Sehfeld) werden auf der rechten Hemisphäre abgebildet. Der dritte und vierte Quadrant werden auf der linken Hemisphäre abgebildet. Die Sehbereiche der Fovea (1~-~4) werden im caudalen Bereich von V1 abgebildet, wohingegen die Sehfelder distal zur Fovea (9~-~12) im rostralen Bereich abgebildet werden.\\
-    Abbildung nach Biology of Sensory Systems, Smith \textsuperscript{\cite[18]{smith2008biology}}}
+    \caption[Der primäre visuelle Cortex]{\textbf{Der primäre visuelle Cortex.} Die Abbildung des Sehfeldes auf dem primären visuellen Cortex. Das Sehfeld kann in vier Quadranten eingeteilt werden. Der erste und zweite Quadrant (linkes Sehfeld) werden auf der rechten Hemisphäre abgebildet. Der dritte und vierte Quadrant werden auf der linken Hemisphäre abgebildet. Die Sehbereiche der Fovea (1~-~4) werden im caudalen Bereich von V1 abgebildet, wohingegen die Sehfelder distal zur Fovea (9~-~12) im rostralen Bereich abgebildet werden.\\
+    Abbildung nach \textit{Biology of Sensory Systems}, Smith \textsuperscript{\cite[18]{smith2008biology}}.}
     \label{fig:V1}
 \end{figure}
 
@@ -1393,9 +1387,8 @@ und die räumlichen Organisation von Objekten zugeschrieben. Die meisten eingehe
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/visual/visual_Cortex.png}
-    \caption[Visuelle Verarbeitungszentren im Cortex]{\textbf{Visuelle Verarbeitungszentren im Cortex}\\
-    V4: vierter visueller Cortex, MT: Medio-Temporallappen
-    Abbildung nach Principles of Neural Science, Kandel \textsuperscript{\cite[27]{kandel2013principles}}}
+    \caption[Visuelle Verarbeitungszentren im Cortex]{\textbf{Visuelle Verarbeitungszentren im Cortex.} V4: vierter visueller Cortex, MT: Medio-Temporallappen.\\
+    Abbildung nach \textit{Principles of Neural Science}, Kandel et al. \textsuperscript{\cite[27]{kandel2013principles}}.}
     \label{fig:visual_pathway_cortex}
 \end{figure}
 
@@ -1411,7 +1404,7 @@ Die Skelettmuskulatur, die für Ausübung der willentlichen Bewegung des Körper
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{pictures/Bilder_Laura/absteigende_bahnen_rkm.png}
-    \caption[Absteigende Bahnen des Rückenmarks]{\textbf{Absteigende Bahnen des Rückenmarks.} Zu sehen ist die Lage der absteigenden motorischen Bahnen im Rückenmark. Die lateralen Bahnen bestehend aus dem Tractus corticospinalis und dem Tractus rubrospinalis liegen in der lateralen Säule des Rückenmarks. Die ventromedialen Bahnen bestehen aus dem Tractus reticulospinalis, Tractus vestibulospinalis und dem Tractus tectospinalis  liegen ventromedial im Rückenmark. Abbildung entnommen aus Neurowissenschaften, Bear \textsuperscript{\cite[14]{neurowissenschaften_baer}}.}
+    \caption[Absteigende Bahnen des Rückenmarks]{\textbf{Absteigende Bahnen des Rückenmarks.} Zu sehen ist die Lage der absteigenden motorischen Bahnen im Rückenmark. Die lateralen Bahnen bestehend aus dem Tractus corticospinalis und dem Tractus rubrospinalis liegen in der lateralen Säule des Rückenmarks. Die ventromedialen Bahnen bestehen aus dem Tractus reticulospinalis, Tractus vestibulospinalis und dem Tractus tectospinalis  liegen ventromedial im Rückenmark. Abbildung aus \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[14]{neurowissenschaften_baer}}.}
     \label{fig:abst_Rueckenmark}
 \end{figure}
 
@@ -1425,14 +1418,15 @@ In der Ratte jedoch ergeben sich einige Unterschiede bezüglich des Verlaufes un
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/Bilder_Laura/corticospinal_tract.PNG}
-    \caption[Tractus corticospinalis]{\textbf{Tractus corticospinalis.} Der corticospinale Trakt entspringt dem Motorkortex der Großhirnrinde. Von dort verläuft er über die Capsula interna, die Crura cerebri (Mittelhirn) und ventral entlang des Pons zur Medulla oblongata. Hier teilt sich der Trakt in einen lateralen und anterioren Bereich. Der Tractus corticospinalis lateralis kreuzt in der Pyramidenkreuzung contralateral ins Rückenmark und zieht lateral in der weißen Substanz nach unten, bis er stufenweise in das Ventralhorn eintritt. Der Tractus corticospinalis anterior verläuft medial auf der ipislateral Seite und kreuzt kurz bevor er im Vorderhorn des Zervikalmarks endet auf die contralaterale Seite. Abbildung entnommen aus Neuroanatomy, Crossman and Neary\textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
+    \caption[Tractus corticospinalis]{\textbf{Tractus corticospinalis.} Der corticospinale Trakt entspringt dem Motorkortex der Großhirnrinde. Von dort verläuft er über die Capsula interna, die Crura cerebri (Mittelhirn) und ventral entlang des Pons zur Medulla oblongata. Hier teilt sich der Trakt in einen lateralen und anterioren Bereich. Der Tractus corticospinalis lateralis kreuzt in der Pyramidenkreuzung contralateral ins Rückenmark und zieht lateral in der weißen Substanz nach unten, bis er stufenweise in das Ventralhorn eintritt. Der Tractus corticospinalis anterior verläuft medial auf der ipislateral Seite und kreuzt kurz bevor er im Vorderhorn des Zervikalmarks endet auf die contralaterale Seite. \\
+    Abbildung aus \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:tr_corticospinalis}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{pictures/Bilder_Laura/py_F04_2P_025x.png}
-    \caption[Pyramidentrakt]{\textbf{Pyramidentrakt.} Der Tractus corticospinalis oder auch Pyramidentrakt (py) verläuft entlang der ventralen Seite des Hirnstamms, hier erkennbar durch das Cerebllum (CB) und den vierten Ventrikel (4V). Unterhalb des vierten Ventrikels zieht sich der Fasciculus longitudinalis medialis (mlf) durch den Hirnstamm. Oberhalb der Pyramidenbahn ist der untere Olivenkern (IO) zu erkennen. Seitlich des Hirnstamms ist der spinale Trakt des Trigeminusnerv (sp5), der dorsale Tractus spinocerebellaris (dsc) und der Tractus olivocerebellaris (oc) zu sehen. (F04-2).}
+    \caption[Pyramidentrakt]{\textbf{Pyramidentrakt.} Der Tractus corticospinalis oder auch Pyramidentrakt (py) verläuft entlang der ventralen Seite des Hirnstamms, hier erkennbar durch das Cerebllum (CB) und den vierten Ventrikel (4V). Unterhalb des vierten Ventrikels zieht sich der Fasciculus longitudinalis medialis (mlf) durch den Hirnstamm. Oberhalb der Pyramidenbahn ist der untere Olivenkern (IO) zu erkennen. Seitlich des Hirnstamms ist der spinale Trakt des Trigeminusnerv (sp5), der dorsale Tractus spinocerebellaris (dsc) und der Tractus olivocerebellaris (oc) zu sehen (F04-2).}
     \label{fig:pyramidentrakt}
 \end{figure}
 
@@ -1443,7 +1437,9 @@ Der Bereich anterior zum primären motorischen Cortex wird auch als prämotorisc
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_Laura/Motorcortex_2.png}
-    \caption[Motorcortex]{\textbf{Motorcortex.} \textbf{A}. Der motorische Cortex setzt sich aus dem primären motorischen Cortex (rot), dem prämotorischen Cortex und dem supplementärmotorischen Cortex (blau) zusammen. Der Gyrus praecentralis entspricht funktionell dem primären motorische Cortex. Anterior dazu befinden sich der prämotorische und supplementärmotorische Cortex. Abbildung entnommen aus Neurowissenschaften, Bear \textsuperscript{\cite[14]{neurowissenschaften_baer}}. \textbf{B}. Der primäre motorische Cortex ist somatotopisch gegliedert. Der Kopfbereich ist dabei auf der unteren Hälfte und die Beine im oberen Berich des Cortex abgebildet. Fein differenzierte Körperregion nehmen dabei einen größeren Anteil der Oberfläche ein. Abbildung entnommen aus Neuroanatomy, Crossman and Neary\textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
+    \caption[Motorcortex]{\textbf{Motorcortex.} \textbf{A}. Der motorische Cortex setzt sich aus dem primären motorischen Cortex (rot), dem prämotorischen Cortex und dem supplementärmotorischen Cortex (blau) zusammen. Der Gyrus praecentralis entspricht funktionell dem primären motorische Cortex. Anterior dazu befinden sich der prämotorische und supplementärmotorische Cortex. \\
+    Abbildung aus \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[14]{neurowissenschaften_baer}}.\\ \textbf{B}. Der primäre motorische Cortex ist somatotopisch gegliedert. Der Kopfbereich ist dabei auf der unteren Hälfte und die Beine im oberen Berich des Cortex abgebildet. Fein differenzierte Körperregion nehmen dabei einen größeren Anteil der Oberfläche ein. \\
+    Abbildung aus \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:motorkortex}
 \end{figure}
 
@@ -1454,7 +1450,7 @@ Dabei entspricht der Bereich des Fr1 funktionell dem primären motorischen Corte
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{pictures/Bilder_Laura/rat_motorcortex_1.png}
-    \caption[Motorcortex Ratte]{\textbf{Motorcortex Ratte.} \textbf{A}. Schematische Zeichnung der laterale Oberfläche. Fr1 (blau) entspricht dem primären motorischen Cortex. Fr3 (rot) ist ein somatotopisches Teilfeld. Fr2 (grün) ist das Äquivalent zu den prämotorischen und supplementärmotorischen Arealen. \textbf{B}. Schematische Zeichnung der dorsalen Oberfläche. Fr1 (blau) entspricht dem primären motorischen Cortex und Fr3 (rot) ist ein somatotopisches Teilfeld davon. Fr2 (grün) ist das Äquivalent zu den prämotorischen und supplementärmotorischen Arealen. Abbildung entnommen aus The rat nervous system, Paxinos \textsuperscript{\cite[22]{paxinos2014rat}}. \textcolor{red}{Hier würde es reichen die farben 1x zu erklären, oder?}}
+    \caption[Motorcortex Ratte]{\textbf{Motorcortex Ratte.} \textbf{A}. Schematische Zeichnung der laterale Oberfläche. Fr1 (blau) entspricht dem primären motorischen Cortex. Fr3 (rot) ist ein somatotopisches Teilfeld. Fr2 (grün) ist das Äquivalent zu den prämotorischen und supplementärmotorischen Arealen. \textbf{B}. Schematische Zeichnung der dorsalen Oberfläche. Fr1 (blau) entspricht dem primären motorischen Cortex und Fr3 (rot) ist ein somatotopisches Teilfeld davon. Fr2 (grün) ist das Äquivalent zu den prämotorischen und supplementärmotorischen Arealen. Abbildung aus \textit{The Rat Nervous System}, Paxinos \textsuperscript{\cite[22]{paxinos2014rat}}. \textcolor{red}{Hier würde es reichen die farben 1x zu erklären, oder?}}
     \label{fig:motorcortex_ratte}
 \end{figure}
 
@@ -1486,7 +1482,8 @@ Der Tractus rubrospinalis geht aus dem Nucleus ruber (roter Kern) hervor, welche
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/Bilder_Laura/rubrospinal_tract.PNG}
-    \caption[Tractus rubrospinalis]{\textbf{Tractus rubrospinalis.} Der Tractus rubrospinalis entspringt dem Nucleus ruber, welcher im Mittelhirn loaklisiert ist. Von dort kreuzt er in der Decussatio tegmentalis anterior auf die contralaterale Seite und steigt in der lateralen Säule das Rückenmark hinab, bis er in das Vorderhorn eintritt. Abbildung entnommen aus Neuroanatomy, Crossman and Neary\textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
+    \caption[Tractus rubrospinalis]{\textbf{Tractus rubrospinalis.} Der Tractus rubrospinalis entspringt dem Nucleus ruber, welcher im Mittelhirn loaklisiert ist. Von dort kreuzt er in der Decussatio tegmentalis anterior auf die contralaterale Seite und steigt in der lateralen Säule das Rückenmark hinab, bis er in das Vorderhorn eintritt. \\
+    Abbildung aus \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:tr_rubrospinalis}
 \end{figure}
 
@@ -1515,7 +1512,7 @@ Der Tractus reticulospinalis kann in zwei Bahnen unterteilt werden, den Tractus 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/Bilder_Laura/reticulospinaler_tract.PNG}
-    \caption[Tractus reticulospinalis]{\textbf{Tractus reticulospinalis.} Den reticulospinalen Trakt kann man in zwei Faserstränge unterteilen.  Der Tractus reticulospinalis medialis entstammt der pontinen Formatio reticularis und der Tractus reticulospinalis lateralis geht aus der medullären Formatio reticularis hervor. Beide Faserstränge ziehen im Vorderstrang des Rückenmarks nach unten. Abbildung entnommen aus Neurowissenschaften, Bear \textsuperscript{\cite[14]{neurowissenschaften_baer}}.}
+    \caption[Tractus reticulospinalis]{\textbf{Tractus reticulospinalis.} Den reticulospinalen Trakt kann man in zwei Faserstränge unterteilen.  Der Tractus reticulospinalis medialis entstammt der pontinen Formatio reticularis und der Tractus reticulospinalis lateralis geht aus der medullären Formatio reticularis hervor. Beide Faserstränge ziehen im Vorderstrang des Rückenmarks nach unten. Abbildung aus \textit{Neurowissenschaften}, Bear et al. \textsuperscript{\cite[14]{neurowissenschaften_baer}}.}
     \label{fig:tr_reticulospinalis}
 \end{figure}
 
@@ -1529,7 +1526,7 @@ Die Fasern des Tractus vestibulospinalis entspringen den Nuclei vestibulares, di
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/Bilder_Laura/vestibulospinal_tract.PNG}
-    \caption[Tractus vestibulospinalis]{\textbf{Tractus vestibulospinalis.} Die Fasern des Tractus vestibulospinalis entstammen den Vestibulariskernen, die im Hirnstamm lokalisiert sind. Aus dem lateralen Vestibulariskern in dem Pons entstammen die Axone, die als lateraler vestibulospinaler Trakt ipsilateral im Vorderstrang des Rückenmarks bis nach unten in das Lumbalmark ziehen. Der mediale vestibulospinale Trakt entsteht aus dem medialen Vestibulariskern in der Medulla. Dieser Faserstrang zieht bilateral zu den Zervikal- und Thorakalsegementen der Wirbelsäule. Abbildung entnommen aus Neuroanatomy, Crossmann and Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
+    \caption[Tractus vestibulospinalis]{\textbf{Tractus vestibulospinalis.} Die Fasern des Tractus vestibulospinalis entstammen den Vestibulariskernen, die im Hirnstamm lokalisiert sind. Aus dem lateralen Vestibulariskern in dem Pons entstammen die Axone, die als lateraler vestibulospinaler Trakt ipsilateral im Vorderstrang des Rückenmarks bis nach unten in das Lumbalmark ziehen. Der mediale vestibulospinale Trakt entsteht aus dem medialen Vestibulariskern in der Medulla. Dieser Faserstrang zieht bilateral zu den Zervikal- und Thorakalsegementen der Wirbelsäule. Abbildung aus \textit{Neuroanatomy}, Crossmann und Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:tr_vestibulospinalis}
 \end{figure}
 
@@ -1546,7 +1543,8 @@ Die spinocerebellaren Trakte oder auch Kleinhirnseitenstrangbahnen leiten propri
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/Bilder_Laura/spinocerebellar_tract.PNG}
-    \caption[Tractus spinocerebellaris]{\textbf{Tractus spinocerebellaris.} Vier unterschiedliche Bahnen werden dem Tractus spinocerebellaris zugeteilt. Der dorsale und ventrale spinocerebellare Trakt leiten Informationen aus den unteren Extremitäten an das Kleinhirn. Der dorsale Strang zieht ipsilateral im dorsolateralen Bereich des Rückenmarks nach oben. Der ventrale Trakt kreuzt auf die contralaterale Seite und steigt ventrolateral im Rückenmark auf. Das Äquivalent dieser Bahnen zu den oberen Extremitäten sind der rostrale spinocerebellare und der cuneocerebellare Trakt. Der cuneocerebellare Strang steigt ipsiliateral als Teil des Fasciculus cuneatus nach oben und projiziert dann über den Nucleus cuneatus in das Cerebellum. Die Axone des rostralen spinocerebellaren Strangs ziehen ipsilateral im Seitenstrang des Rückenmarks zum Kleinhirn. Abbildung entnommen aus Neuroanatomy, Crossmann and Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
+    \caption[Tractus spinocerebellaris]{\textbf{Tractus spinocerebellaris.} Vier unterschiedliche Bahnen werden dem Tractus spinocerebellaris zugeteilt. Der dorsale und ventrale spinocerebellare Trakt leiten Informationen aus den unteren Extremitäten an das Kleinhirn. Der dorsale Strang zieht ipsilateral im dorsolateralen Bereich des Rückenmarks nach oben. Der ventrale Trakt kreuzt auf die contralaterale Seite und steigt ventrolateral im Rückenmark auf. Das Äquivalent dieser Bahnen zu den oberen Extremitäten sind der rostrale spinocerebellare und der cuneocerebellare Trakt. Der cuneocerebellare Strang steigt ipsiliateral als Teil des Fasciculus cuneatus nach oben und projiziert dann über den Nucleus cuneatus in das Cerebellum. Die Axone des rostralen spinocerebellaren Strangs ziehen ipsilateral im Seitenstrang des Rückenmarks zum Kleinhirn. \\
+    Abbildung aus \textit{Neuroanatomy}, Crossmann und Neary \textsuperscript{\cite[8]{crossman2014neuroanatomy}}.}
     \label{fig:tr_spinocerebellaris}
 \end{figure}
 
@@ -1617,7 +1615,7 @@ Innerhalb des Ncl. n. facialis der Ratte lassen sich vier Kerngebiete - laterale
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{pictures/Bilder_Laura/facialis_Nerv_F09_1png.png}
-    \caption[Verlauf des Nervus facialis]{\textbf{Verlauf des Nervus facialis.} \textbf{A.} Zu erkennen ist der charakteristische Verlauf des Nervus facialis (7n). Seine Fasern ziehen dorsokranial unterhalb des vierten Ventrikels (4V) um den Nucleus abducens und bilden dabei das Knie des Facialisnervs (g7). Außerdem in der Abbildung zu erkennende Fasertrakte: Pryramidentrakt (py), Trapezkörper (tz), sensorische Wurzel des Trigeminusnervs (s5), Fasciculus longitudinalis medialis (mlf), mittlerer Kleinhirnstiel (mcp), superiorer Kleinhirnstiel (scp) und ventraler Spinocerebellarer Trakt (vsc). Faser-Färbung (F09-1).}
+    \caption[Verlauf des Nervus facialis]{\textbf{Verlauf des Nervus facialis.} Zu erkennen ist der charakteristische Verlauf des Nervus facialis (7n). Seine Fasern ziehen dorsokranial unterhalb des vierten Ventrikels (4V) um den Nucleus abducens und bilden dabei das Knie des Facialisnervs (g7). Außerdem in der Abbildung zu erkennende Fasertrakte: Pryramidentrakt (py), Trapezkörper (tz), sensorische Wurzel des Trigeminusnervs (s5), Fasciculus longitudinalis medialis (mlf), mittlerer Kleinhirnstiel (mcp), superiorer Kleinhirnstiel (scp) und ventraler Spinocerebellarer Trakt (vsc). Faser-Färbung (F09-1).}
     \label{fig:nervus-facialis}
 \end{figure}
 
@@ -1648,30 +1646,44 @@ Führt man einen Querschnitt durch das Kleinhirn durch, wird die grobe innere St
 \textcolor{red}{BILD!!!! 1.Lehrbuch und 2. Als Querschnitt Scan mit den Nuclei}
 
 \subsubsection{Schichtung des cerebellären Cortex}
-Neurons in the Cerebellar Cortex Are Organized
-into Three Layers
-The three layers of the cerebellar cortex possess distinct
-kinds of neurons and perform different operations
+Neurons in the Cerebellar Cortex Are Organized into Three Layers. The three layers of the cerebellar cortex possess distinct kinds of neurons and perform different operations.
+The deepest or granular layer is the input layer. It contains a vast number of granule cells, estimated at 100 billion, which appear in histological sections as small, densely packed, darkly stained nuclei. This layer also contains a few larger Golgi interneurons and, in some cerebellar regions, a smattering of other neurons such as cells of Lugaro, unipolar brush cells, and chandelier cells. The mossy fibers, one of the two principal afferent inputs to the cerebellum, terminate in this layer. The bulbous terminals of the mossy fibers excite granule cells and Golgi neurons in synaptic complexes called cerebellar glomeruli. As we will see later when discussing recurrent circuits in the cerebellum, Golgi cells inhibit granule cells.
+The middle, or Purkinje cell layer, is the output layer of the cerebellar cortex. This layer consists of a
+single sheet of Purkinje cells bodies, which are 50 to 80 $\upmu$ m in diameter. The fan-like dendrites of Purkinje
+cells extend upward into the molecular layer where they receive inputs from the second major type of
+afferent fiber in the cerebellum, the climbing fibers, as well as from inhibitory and excitatory interneurons.
+Purkinje cell axons conduct the entire output of the cerebellar cortex, projecting to the deep nuclei in the underlying white matter or to the vestibular nuclei in the brain stem where the GABA (gamma-aminobutyric acid) released by their terminals has an inhibitory action. The outermost, or molecular layer, is an important
+processing layer of the cerebellar cortex. It contains the cell bodies and dendrites of two types of inhibitory
+interneurons, the stellate and basket cells, as well as the extensive dendrites of Purkinje cells. It also contains the axons of the granule cells, called the parallel fibers because they run parallel to the long axis of
+the folia (see Figure 42–4). The spatially polarized dendrites of Purkinje neurons cover extensive terrain
+in the anterior-posterior direction, but a very narrow territory in the medial-lateral direction. Because the
+parallel !bers run in the medial-lateral direction, they are oriented perpendicular to the dendritic trees of the
+Purkinje cells. Thus each granule cell has the potential to form a few synapses with each of a large number
+of Purkinje neurons, while making denser connections on a few Purkinje neurons as its axon ascends into the
+molecular layer.
+\subsubsection{Kleinhirnkerne}
 
 \subsubsection{Schaltkreis}
 
 \subsubsection{Funktionelle Gliederung}
-The cerebellum is also divisible into three areas that have distinctive roles in different kinds of movements: the vestibulocerebellum, spinocerebellum, and cerebrocerebellum. The vestibulocerebellum consists of the flocculonodular lobe. The spinocerebellum comprises the vermis and intermediate parts of the hemispheres. The cerebrocerebellum comprises the lateral parts of the hemispheres.
+Die unterschiedlichen Bereiche des Cerebellums lassen sich auch in funktionelle Einheiten untergliedern, abhängig von ihrer Funktion in der Bewegungskoordination. Es wird das Vestibulocerebellum, das Spinocerebellum und das Cerebrocerebellum unterschieden. Zum Vestibulocerebellum zählt der Bereich des Lobus flocculonodularis. Der Vermis und die intermediären Bereiche der Hemisphären werden dem Spinocerebellum zugeordnet und das Cerebrocerebellum nimmt das Gebiet der lateralen Hemisphären in Anspruch \textsuperscript{\cite[42]{kandel2013principles}}. Die unterschiedlichen Funktionen und Projektionen der einzelnen Bereiche werden nun detailliert besprochen. 
 
-\subsubsection*{Vestibulocerebellum}
-The vestibulocerebellum consists of the flocculonodular lobe and is the most
-primitive part of the cerebellum, appearing first in fishes. It receives vestibular and visual inputs, projects to the vestibular nuclei in the brain stem, and participates in balance, other vestibular reflexes, and eye movements
+\subsubsection*{Vestibulocerebellum} \index{Cerebellum! Vestibulocerebellum}
+Das Vestibulocerebellum erstreckt sich über den Lobus flocculonodularis, bestehend aus dem Flocculus und dem Nodulus. Es gilt als ältester und primitivster Bereich des Kleinhirns, der in Fischen das erste mal auftritt. Die eingehende Information besteht aus Parametern der Kopfbewegung und seine relative Lage zur Schwerkraft und wird in den Bogengängen und der Macula des Innenohrs gemessen. Der Großteil der afferenten Fasern des Vestibulocerebellum entstammt daher aus den Vestibulariskernen des Hirnstammes. Zusätzlich dazu erhält es auch visuellen Input. Dieser stammt entweder aus Kerngebieten des mesencephalen Prätectums unterhalb der Colliculi superiores oder aus dem primären und sekundären visuellen Cortex, die die Information über Projektionen durch die Nuclei pontis in das Kleinhirn leiten. Die    \textsuperscript{\cite[42]{kandel2013principles}}        
 
 
+The vestibulocerebellum is unique in that its output bypasses the deep cerebellar nuclei and proceeds
+directly to the vestibular nuclei in the brain stem. Purkinje cells in the midline parts of the vestibulocerebellum project to the lateral vestibular nucleus to modulate the lateral and medial vestibulospinal tracts, which predominantly control axial muscles and limb extensors to assure balance during stance and gait.
+Disruption of these projections through lesions or disease impairs equilibrium. Purkinje neurons in the lateral parts of the vestibulocerebellum project to the medial vestibular nucleus to control eye movements and coordinate movements of the head and eyes. Interestingly, this ancient part of the cerebellum has been co-opted in more recent phylogeny by visual guidance of eye movements. In fact, the most striking deficits following lesions of the lateral vestibulocerebellum are in smoothpursuit eye movement toward the side of the lesion. A patient with a lesion of the left lateral vestibulocerebellum can smoothly track a target that is moving to the right, but only poorly tracks motion to the left using predominantly saccades. Patients with lesions of the lateral vestibulocerebellum have normal ocular responses to head turns, but the responses cannot be suppressed by fixation. If, for example, a patient seated in a barber’s chair is rotated to the right in the dark, the vestibuloocular reflex causes smooth eye rotation to the left and resetting saccades to the right. If the patient is placed in the light and views an object attached to the chair, he or she can use fixation to suppress the smooth eye movements of the reflex. For leftward head rotation, however, the patient cannot do so. These deficits occur commonly if the lateral vestibulocerebellum is compressed by an acoustic neuroma, a benign tumor that grows on the eighth cranial nerve as it courses directly beneath the lateral vestibulocerebellum.
 
 \subsubsection*{Spinocerebellum}
-The spinocerebellum comprises the vermis and intermediate parts of the hemispheres and appears later in phylogeny. It is so named because it receives somatosensory and proprioceptive inputs from the spinal cord. The vermis receives visual, auditory, and
-vestibular input as well as somatic sensory input from the head and proximal parts of the body. It projects by way of the fastigial nucleus to cortical and brain stem
-regions that give rise to the medial descending systems controlling proximal muscles of the body and limbs. The vermis governs posture and locomotion as well
-as eye movements. The adjacent intermediate parts of the hemispheres also receive somatosensory input from the limbs. Neurons here project to the interposed nucleus, which provides inputs to lateral corticospinal and rubrospinal systems and controls the more distal muscles of the limbs and digits
+The spinocerebellum comprises the vermis and intermediate parts of the hemispheres and appears later in phylogeny. It is so named because it receives somatosensory and proprioceptive inputs from the spinal cord. The vermis receives visual, auditory, and vestibular input as well as somatic sensory input from the head and proximal parts of the body. It projects by way of the fastigial nucleus to cortical and brain stem regions that give rise to the medial descending systems controlling proximal muscles of the body and limbs. The vermis governs posture and locomotion as well as eye movements. The adjacent intermediate parts of the hemispheres also receive somatosensory input from the limbs. Neurons here project to the interposed nucleus, which provides inputs to lateral corticospinal and rubrospinal systems and controls the more distal muscles of the limbs and digits.
+
 
 \subsubsection*{Corticocerebellum}
-The cerebrocerebellum comprises the lateral parts of the hemispheres. These areas are phylogenetically most recent and are much larger in humans and apes than in monkeys and cats. Almost all of the inputs to and outputs from this region involve connections with the cerebral cortex. The output is transmitted through the dentate nucleus, which projects to motor, premotor, and prefrontal cortices. The lateral hemispheres have many functions but seem to participate most extensively in planning and executing movement. They may also have a role in certain cognitive functions unconnected with motor planning, such as working memory. There is now some correlative evidence implicating the cerebellar hemispheres in aspects of schizophrenia and autism.
+The cerebrocerebellum comprises the lateral parts of the hemispheres. These areas are phylogenetically most recent and are much larger in humans and apes than in monkeys and cats. Almost all of the inputs to and outputs from this region involve connections with the cerebral cortex. The output is transmitted through the dentate nucleus, which projects to motor, premotor, and prefrontal cortices. The lateral hemispheres have many functions but seem to participate most extensively in planning and executing movement. They may also have a role in certain cognitive functions unconnected with motor planning, such as working memory. There is now some correlative evidence implicating the cerebellar hemispheres in aspects of schizophrenia and autism. \\
+
+\textcolor{red}{ABBILDUNG! EINTEILUNG FUNKTIONELL AUS DEM KANDEL}
 
 \newpage
 \section{Integrative Systeme} \label{sec:integrative_systeme}
@@ -1715,7 +1727,8 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/Hippocampus.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N19-4)
     Felder des Ammon's Horn (CA~1~-~3), Gyrus dentatus (DG)}
     \label{fig:Hippocampus_zellschicht}
 \end{figure}
@@ -1723,7 +1736,8 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/Hippo_uebersicht.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N19-4)
     dritter Ventrikel (3V), Archicortex (AHi), Amygdala (Amy), Plexus choroideus (ChP), Corpus callosum (cc), Cortex (Cx), Lamina medullaris lateralis (eml) Entorhinaler Cortex (Ent), Fimbria (fi), Hippocampus (Hi), Capsula interna (ic), Nucleus geniculatum laterale (LGN), Mammilarkörper (MB), Leminiscus mediale (ml), optischer Trakt (opt), posteriore Kommissur (pc), primärer  olfaktorischer  Cortex (PO), Fissura rhinalis (RF), Substantia nigra pars reticularis (SNR)}
     \label{fig:hippo_uebersicht}
 \end{figure}
@@ -1731,18 +1745,29 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}
     \centering
     \includegraphics{pictures/Basalganglia/cingulaerer_Cortex.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N30-4)
     anteriore Kommissur (aca), Nucleus accumbens (Acb), cingulärer Cortex~/ Gyrus cinguli (CCx/Cg), Cingulum (cg), Caudate putamen (CPu), Capsula externa (ec), Knie des Corpus callosum (gcc), Insula callejae (ICj), Tractus olfactorius lateralis (lo), lateraler Ventrikel (LV), primär olfaktorischer Cortex (PO), olfaktorisches Tubercle (Tu)}
     \label{fig:cingulaerer_Cortex}
 \end{figure}
 
+
+\begin{figure}
+    \centering
+    \includegraphics{pictures/Basalganglia/Subiculum.png}
+    \caption[Caption]{\textbf{Caption}\\
+    (N14-4)
+    Aquädukt (Aq), zentrales Höhlengrau (CG), Kleinhirnpedunkle (cp), Cortex (Cx), Entorhinaler Cortex (Ent), Forceps minor des Corpus callosum (fmj), Hilus des Gyrus dentatus (Hil), medialer Lemniscus (ml), Subiculum (S), Colliculus superior (SC)}
+    \label{fig:my_label}
+\end{figure}
 
 \subsection{Basalganglien} \label{subsec:basalganglien}
 
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/SN.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N18-4)
     Archicortex (AHi), Amygdala (Amy), Aquädukt (Aq), Plexus choroideus (ChP), Kleinhirnpedunkel (cp), Cortex (Cx), Gyrus dentatus (DG), Entorhinaler Cortex (Ent), Forceps major des Corpus callosum (fmj), Hippocampus (Hi), lateraler Ventrikel (LV), Mammilarkörper (MB), Nucleus geniculatum mediale (MGN), Fissura rhinalis (RF), Colliculus superior (SC), Substantia nigra pars compacta (SNC), Substantia nigra pars reticularis (SNR), Thalamus (Th), Area tegmentalis ventralis (VTA)}
     \label{fig:SN_Basalganglia}
 \end{figure}
@@ -1750,7 +1775,8 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/Nucleus_acumbens.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N30-4)
     anteriore Kommissur (aca), Nucleus accumbens (Acb), Cingulum (cg), Caudate putamen (CPu), Capsula externa (ec), Knie des Corpus callosum (gcc), Insula callejae (ICj), Tractus olfactorius lateralis (lo), lateraler Ventrikel (LV), primär olfaktorischer Cortex (PO), olfaktorisches Tubercle (Tu)}
     \label{fig:Nucleus_accumbens}
 \end{figure}
@@ -1758,7 +1784,8 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/Nucleus_subthalamus.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N20-4)
     dritter Ventrikel (3V), Archicortex (AHi), Amygdala (Amy), Nucleus arcuatus hypothalami (Arc), Ammon's Horn (CA3), Corpus callosum (cc), Cingulum (cg), Kleinhirnpedunkel (cp), dorsale Hippocampuskomissur (dhc), Fasciculus retroflexus (fr), Hippocampus (Hi), Nucleus geniculatum laterale (LGN), lateraler Ventrikel (LV), Nucleus habenularis mediale (MHb), Leminiscus mediale (ml), optischer Tract (opt), Nucleus parafascicularis (PF),  primärer  olfaktorischer  Cortex (PO), Fissura rhinalis (RF), Nucleus subthalamicus (STh), Radiatio thalami superior (str).}
     \label{fig:Nucleus_subthalamus}
 \end{figure}
@@ -1766,7 +1793,8 @@ einem Bogen über dem III. Ventrikel nach rostral m1d ventral weiter und endet i
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Basalganglia/GP_CPu.png}
-    \caption{Caption\\
+    \caption[Caption]{\textbf{Caption}\\
+    (N25-3)
     dritter Ventrikel (3V), Amygdala (Amy), Corpus callosum (cc), Caudate Putamen (CPu), Capsula externa (ec), Globus pallidus (GP), Hypothalamus (Hy), Capsula interna (ic), lateraler Nucleus tractus olfactorius (LOT), lateraler Ventrikel (LV), Chiasma opticum (ox), primär olfaktorischer Cortex (PO),  Nucleus reticularis thalami (Rt), Nucleus suprachiasmicus (SCh), Stria medullaris thalami (sm), Nucleus supraopticus (SO), Thalamus (Th), ventrale Hippocampuskommissur (vhc)}
     \label{fig:GP_CPu}
 \end{figure}
@@ -1790,13 +1818,13 @@ Die monoaminergen Neurone besitzen weitreichende Projektionen innerhalb des zent
 \label{dopaminerges_system}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{System! dopaminerg}
-Das Catecholamin Dopamin\index{Dopamin} (Abb.~\ref{fig:dopamin}) wird ausgehend von der aromatischen Aminosäure Tyrosin synthetisiert. Der Großteil des Dopamins wird in rostralen Nuclei, der Substantia nigra \index{Substantia nigra} und der VTA des Mesencephalons, gebildet. Es können zwischen vier größere dopaminerge Nerventrakte unterschieden werden. Drei von ihnen entspringen dem Mesencephalon (Abb.\ref{dopaminerges_system}) \textsuperscript{\cite[13]{kandel2013principles}}. 
+Das Catecholamin Dopamin\index{Dopamin} (Abb.~\ref{fig:dopamin}) wird ausgehend von der aromatischen Aminosäure Tyrosin synthetisiert. Der Großteil des Dopamins wird in rostralen Nuclei, der Substantia nigra \index{Substantia nigra} und der VTA des Mesencephalons, gebildet. Es können zwischen vier größere dopaminerge Nerventrakte unterschieden werden. Drei von ihnen entspringen dem Mesencephalon (Abb.~\ref{dopaminerges_system}) \textsuperscript{\cite[13]{kandel2013principles}}. 
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{pictures/Bilder_monoamine_systeme/dopamin.PNG}
-    \caption{\textbf{Dopamin}}
+    \caption[Dopamin]{\textbf{Dopamin.} Abbildung aus \textit{Principles of Neural Science}, Kandel et al. \textsuperscript{\cite[13]{kandel2013principles}}.}
     \label{fig:dopamin}
 \end{figure}{}
 
@@ -1829,7 +1857,8 @@ Der vierte dopaminerge Trakt ist der \textbf{tuberoinfundibulare Trakt}\index{Tr
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_monoamine_systeme/dopaminerges_system.PNG}
-    \caption[Dopaminerges System]{\textbf{Dopaminerges System.} Zwei dopaminerge Kerngebiete, die Substantia nigra pars compacta und die Area tegmentalis ventralis, sind im Mesencephalon gelegen. Die dopaminergen Neurone des Nucleus arcuatus sind im Diencephalon lokalisiert. \textsuperscript{\cite[9]{crossman2014neuroanatomy}}}
+    \caption[Dopaminerges System]{\textbf{Dopaminerges System.} Zwei dopaminerge Kerngebiete, die Substantia nigra pars compacta und die Area tegmentalis ventralis, sind im Mesencephalon gelegen. Die dopaminergen Neurone des Nucleus arcuatus sind im Diencephalon lokalisiert. Abbildung nach \textit{Neuroanatomy}, Crossman und Neary
+    \textsuperscript{\cite[9]{crossman2014neuroanatomy}}.}
     \label{fig:dopaminerges_system}
 \end{figure}
 
@@ -1842,7 +1871,7 @@ Genau wie Dopamin gehört auch Noradrenalin\index{Noradrenalin} (engl.: Norepine
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{pictures/Bilder_monoamine_systeme/noradrenalin.PNG}
-    \caption{\textbf{Noradrenalin}}
+    \caption[Noradrenalin]{\textbf{Noradrenalin.} Abbildung aus \textit{Principles of Neural Systems}, Kandel et al. \textsuperscript{\cite[13]{kandel2013principles}}.}
     \label{fig:noradrenalin}
 \end{figure}
 
@@ -1860,7 +1889,7 @@ Funktionell spielten die noradrenergen Neurone des Locus coeruleus eine wichtige
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_monoamine_systeme/noradrenerges_system.PNG}
-    \caption[Noradrenerges System]{\textbf{Noradrenerges System.} Noradrenerge Neurone sind in der Medulla und im Pons lokalisiert. Der Locus coeruleus des Pons ist das wichtigste noradrenerge Kerngebiet. \textsuperscript{\cite[9]{crossman2014neuroanatomy}}}
+    \caption[Noradrenerges System]{\textbf{Noradrenerges System.} Noradrenerge Neurone sind in der Medulla und im Pons lokalisiert. Der Locus coeruleus des Pons ist das wichtigste noradrenerge Kerngebiet. Abbildung nach \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[9]{crossman2014neuroanatomy}}.}
     \label{fig:noradrenerges_system}
 \end{figure}{}
 
@@ -1874,7 +1903,7 @@ Serotonin\index{Serotonin} (Abb.~\ref{fig:serotonin}) gehört, im Gegensatz zu D
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{pictures/Bilder_monoamine_systeme/serotonin.PNG}
-    \caption{\textbf{Serotonin} \textsuperscript{\cite[13]{kandel2013principles}}}
+    \caption[Serotonin]{\textbf{Serotonin.} Abbildung aus \textit{Principles of Neural Systems}, Kandel et al. \textsuperscript{\cite[13]{kandel2013principles}}.}
     \label{fig:serotonin}
 \end{figure}{}
 
@@ -1892,7 +1921,7 @@ Die Projektionen in den cerebralen Cortex sind in kognitive Funktionen, sowie in
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{pictures/Bilder_monoamine_systeme/serotonerges_system.PNG}
-    \caption[Serotonerges System]{\textbf{Serotonerges System.} Die serotonergen Neurone sind in den Raphé-Kernen lokalisiert. Diese liegen medial im Teil der Formatio reticularis, der zur Medulla gehört. \textsuperscript{\cite[9]{crossman2014neuroanatomy}}}
+    \caption[Serotonerges System]{\textbf{Serotonerges System.} Die serotonergen Neurone sind in den Raphé-Kernen lokalisiert. Diese liegen medial im Teil der Formatio reticularis, der zur Medulla gehört. Abbildung nach \textit{Neuroanatomy}, Crossman und Neary \textsuperscript{\cite[9]{crossman2014neuroanatomy}}.}
     \label{fig:serotonerges_system}
 \end{figure}{}
 
@@ -1925,7 +1954,7 @@ Nachdem das Avidin die biotylinielierte Meerrettich-Peroxidase gebunden hat, kan
 Wasserstoffperoxid bindet and die Meerrettich-Peroxidase und oxidiert das DAB, welches reduziert und nun als bräunliches Edukt vorliegt und somit indirekt die erfolgreiche Bindung and das Antigen sichtbar macht.
 \end{comment}
 
-\subsubsection{Größe der \textit{Substantia nigra}}
+\subsubsection{Größe der Substantia nigra}
 
 
 Die Substantia nigra pars compacta \index{Substantia nigra} wurde über eine rostro-caudale Achse von acht Bilder (Abb.~\ref{fig:SNC}) ausgemessen. Jeder der ausgemessenen Schnitte war 300~$\upmu$m von dem nächsten entfernt. Somit wurde die Substantia nigra pars compacta über eine Ausdehnung von 2400~$\upmu$m ausgemessen. In Tabelle~\ref{tab:Volumen_SNC} ist die jeweilige Länge und Breite der Substantia nigra pars compacta pro Bild aus Abbildung~\ref{fig:SNC} aufgetragen. Als Höhe wird der Abstand zwischen zwei Bildern benannt. Mit Hilfe der Maße wurde das Volumen der Substantia nigra pars compacta ausgerechnet. Der Einfachheit halber, haben wir das Volumen der einzelnen Schnitte bis zum nächsten als Quader ausgerechnet und dann zusammen genommen. Somit ergibt sich ein gesamt Volumen von übereinander gestapelten Quadern. Das Volumen der Substantia nigra pars compacta entspricht 0.5211~mm\textsuperscript{3} oder $\sim$ 500~000~000~$\upmu$m\textsuperscript{3}.
@@ -1940,7 +1969,7 @@ Die Substantia nigra pars compacta \index{Substantia nigra} wurde über eine ros
 
 \begin{table}[H]
 \centering
-\caption[Tabelle zum Volumen der Substantia nigra]{\textbf{Volumen der Substantia nigra}\\ Es wurde die Länge und Breite der Substantia nigra pars compacta in den acht Nissl-Schnitten in Abbildung~\ref{fig:SNC} ausgemessen. Die Höhe wurde von einem Schnitt bis zum nächsten ausgemessenen Schnitt genommen. Die letzte Zeile zeigt die jeweilige Summe der Spalte.
+\caption[Volumen der Substantia nigra]{\textbf{Volumen der Substantia nigra.} Es wurde die Länge und Breite der Substantia nigra pars compacta in den acht Nissl-Schnitten in Abbildung~\ref{fig:SNC} ausgemessen. Die Höhe wurde von einem Schnitt bis zum nächsten ausgemessenen Schnitt genommen. Die letzte Zeile zeigt die jeweilige Summe der Spalte.
 Insgesamt hat die Substantia nigra pars compacta unserer Ratte ein Volumen von 0.5211~mm\textsuperscript{3}}
 \label{tab:Volumen_SNC}
 \resizebox{\textwidth}{!}{%
@@ -1960,13 +1989,12 @@ H                                 & 1197.16                                 & 12
 \end{table}
 
 
-\subsubsection{Größenvergleich der Neurone in der \textit{Substantia nigra} und im \textit{Locus coeruleus}}
+\subsubsection{Größenvergleich der Neurone in der Substantia nigra und im Locus coeruleus}
 
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Bilder_monoamine_systeme/Zellen_LC.png}
-    \caption[Zellen des Locus coeruleus]{\textbf{Zellen des Locus coeruleus}\\
-    Nahaufnahme angefärbten Zellen des Locus coeruleus in den immunohistochemischen Schnitten. \textbf{A}: (I05a-2) \textbf{B}: (I05b-2). Insgesamt wurden 50 Zellkerne in den beiden Schnitten ausgemessen. Im Durchmesser sind die Zellkerne des Locus coeruleus 12.10~$\upmu$m~\rpm~0.1}
+    \caption[Zellen des Locus coeruleus]{\textbf{Zellen des Locus coeruleus.} Nahaufnahme angefärbten Zellen des Locus coeruleus in den immunohistochemischen Schnitten. \textbf{A}: (I05a-2), \textbf{B}: (I05b-2). Insgesamt wurden 50 Zellkerne in den beiden Schnitten ausgemessen. Im Durchmesser sind die Zellkerne des Locus coeruleus 12.10~$\upmu$m~\rpm~0.1}
     \label{fig:Zellen_LC}
 \end{figure}
 
@@ -1980,8 +2008,7 @@ Die Zellen in den beiden Kerngebieten sind signifikant (t-Test, T(98) = 5.45, p 
 \begin{figure}[H]
     \centering
     \includegraphics{pictures/Bilder_monoamine_systeme/Zellen_SNC.png}
-    \caption[Zellen des Substantia nigra pars compacta]{\textbf{Zellen des Substantia nigra pars compacta}\\
-    Nahaufnahme angefärbten Zellen der Substantia nigra pars compacta in den immunohistochemischen Schnitten. \textbf{A}: (I08b-1) \textbf{B}: (I08b-2) \textbf{C}: (I08b-3). Insgesamt wurden 50 Zellkerne in den Schnitten ausgemessen. Im Durchmesser sind die Zellkerne der Substantia nigra pars compacta 14.78~$\upmu$m~\rpm~0.09}
+    \caption[Zellen des Substantia nigra pars compacta]{\textbf{Zellen des Substantia nigra pars compacta.} Nahaufnahme angefärbten Zellen der Substantia nigra pars compacta in den immunohistochemischen Schnitten. \textbf{A}: (I08b-1), \textbf{B}: (I08b-2), \textbf{C}: (I08b-3). Insgesamt wurden 50 Zellkerne in den Schnitten ausgemessen. Im Durchmesser sind die Zellkerne der Substantia nigra pars compacta 14.78~$\upmu$m~\rpm~0.09}
     \label{fig:Zellen_SNC}
 \end{figure}
 
@@ -1996,6 +2023,7 @@ t.test: T(98) = 5.45174646; p < 0.001
 % Bibliography
 
 \newpage
+\addcontentsline{toc}{section}{Literaturverzeichnis}
 \bibliographystyle{abbrv}
 \bibliography{references}
 
